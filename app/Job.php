@@ -14,7 +14,7 @@ class Job extends Model
             'dispatch_to',
             'remarks',
             'name',
-      
+            
        
     ];
     
