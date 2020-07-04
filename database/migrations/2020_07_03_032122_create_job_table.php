@@ -19,7 +19,7 @@ class CreateJobTable extends Migration
             $table->text('vehicle_type');
             $table->text('load_from');
             $table->text('dispatch_to');
-            $table->text('remarks');
+            $table->text('remarks')->nullable();
             $table->string('name');
             $table->timestamps();
         });
