@@ -69,6 +69,8 @@
 														Source of Lead:&nbsp;&nbsp;{{$c->lead_from}}<br>
 														Assigned To:&nbsp;&nbsp;{{$c->assigned_to}}<br>
 													
+
+														@if($c->assigned_to =='')         
 														<br/>
 														<br/>
 														<form action="{{ route('job.update',$c->id) }}" method="POST" >
@@ -80,9 +82,10 @@
 															<input type="hidden" id="custId" name="name" value="{{ $c->name}}">
 														
 															
+															
 																<div class="col">
 																	<label for="sel1">Assign This Job To:</label>
-																	<select class="form-control" id="sel1" name="assigned_to">
+												                    <select class="form-control" id="sel1" name="assigned_to">
 																		@foreach ($user as $u)
 																		  <option>{{$u->name}}</option>
 											                            @endforeach
@@ -97,6 +100,13 @@
 															
 														</form>
 								
+																										@else
+																										<a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																											<path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
+																										  </svg></a>      
+																										@endif
+
+													
 													</div>
 													<div class="modal-footer">
 													  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
@@ -106,9 +116,7 @@
 												</div>
 											  </div></td>
 											  <td>	@if($c->assigned_to =='')         
-												<a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-													<path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-												  </svg></a>
+												<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
 																								@else
 																								<a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 																									<path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
