@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Job;
+use App\User;
 use Illuminate\Http\Request;
 use\Auth;
 
@@ -18,10 +19,13 @@ class JobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   $user = User::all();
+        ;
+       /*  $user = $job->user;  */
         $jobs = Job::latest()->paginate(10);
-        return view('admin',compact( 'jobs'))
+        return view('admin',compact( 'jobs','user'))
            ->with('i', (request()->input('page', 1) - 1) * 10);
+           
     }
 
     /**

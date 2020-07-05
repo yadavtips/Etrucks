@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::resource('job','JobController');
 Route::resource('assigned','AssignedController');
+Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

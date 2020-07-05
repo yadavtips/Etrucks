@@ -9,6 +9,7 @@
 			<h4 class="page-title">Dashboard</h4>
 		
 		</div>
+		
 		<div class="row">
 			<div class="col-md-12 xs-6">
 				<div class="card">
@@ -78,13 +79,10 @@
 																<div class="col">
 																	<label for="sel1">Assign This Job To:</label>
 																	<select class="form-control" id="sel1" name="assigned_to">
-																		<option>1</option>
-																		<option>2</option>
-																		<option>3</option>
-																		<option>4</option>
-																		<option>5</option>
-																		<option>6</option>
-																		<option>7</option>
+																		@foreach ($user as $u)
+																		  <option>{{$u->name}}</option>
+											                            @endforeach
+																	
 																	  </select>
 																</div>
 															
