@@ -22,6 +22,7 @@ class CreateJobTable extends Migration
             $table->text('dispatch_to');
             $table->text('remarks')->nullable();
             $table->string('name');
+            $table->string('assigned_to')->nullable();
             $table->timestamps();
         });
     }
