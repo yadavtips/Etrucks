@@ -49,6 +49,7 @@ class JobController extends Controller
              $dispatch='dispatch_to' => 'required',
             'remarks' => '',
             'name'=>'',
+            'lead_from'=>'required',
         ]);
 
      
@@ -93,7 +94,15 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
-        //
+        $request->validate([
+          
+              'assigned_to'=>'required',
+              'id'=>'',
+          ]);
+
+        $job->update($request->all());
+          return redirect()->route('job')
+          ->with('success','Job ID' . ' ' . $request['id'] .' ' . 'Assigned'. ' ' . 'To'. ' ' . $request['assigned_to'] . '  ' . 'Successfully' );
     }
 
     /**

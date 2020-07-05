@@ -14,6 +14,8 @@ class Job extends Model
             'dispatch_to',
             'remarks',
             'name',
+            'lead_from',
+            'assigned_to',
             
        
     ];

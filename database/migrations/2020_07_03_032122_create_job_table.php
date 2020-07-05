@@ -17,6 +17,7 @@ class CreateJobTable extends Migration
             $table->id();
             $table->string('phone');
             $table->text('vehicle_type');
+            $table->text('lead_from');
             $table->text('load_from');
             $table->text('dispatch_to');
             $table->text('remarks')->nullable();

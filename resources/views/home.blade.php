@@ -45,10 +45,6 @@
                                     <input type="text" class="form-control" id="name" name="phone" placeholder="Phone Number" tabindex="1" required>
                                 </div>                      
                                 
-                                <div class="form-group">
-                                    <label class="form-label" for="name"> Vehicle Type</label>
-                                    <input type="text" class="form-control" id="name" name="vehicle_type" placeholder="Vehicle Type" tabindex="1" required>
-                                </div>    
                                 <div class="row">
                                     <div class="col">
                                         <label class="form-label" for="name">Load From</label>
@@ -60,6 +56,34 @@
                                     </div>
                                  </div>
                                 <br/>
+                                <div class="row">
+                                    <div class="col">
+                                        
+                                        <label for="sel1">Vehicle Type (select one):</label>
+                                        <select class="form-control" id="sel1" name="vehicle_type">
+                                          <option>32 Feet , 7 Ton (32 * 8 * 8) </option>
+                                          <option>32 Feet , 7 Ton hq (32 * 8 * 9.6)</option>
+                                          <option>32 Feet , 14 Ton (32 * 8 * 8)</option>
+                                          <option>32 Feet , 14 Ton hq (32 * 8 * 9.6)</option>
+                                          <option>32 Feet , 17 Ton (32 * 8 * 8)</option>
+                                          <option>32 Feet , 17 Ton hq (32 * 8 * 9.6)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="sel1">Source of Lead (select one):</label>
+                                        <select class="form-control" id="sel1" name="lead_from">
+                                            <option>+91 9717940842</option>
+                                            <option>+91 7011893820</option>
+                                            <option>+91 9350125636</option>
+                                            <option>+91 9911695753</option>
+                                            <option>+91 8800119298</option>
+                                            <option>Indiamart</option>
+                                            <option>Misc.</option>
+                                          </select>
+                                    </div>
+                                 </div>
+                              
+                                  <br>
                                  <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Remarks</label>
                                     <textarea class="form-control"name="remarks" id="exampleFormControlTextarea1" rows="3"></textarea>

@@ -18,11 +18,17 @@ Route::get('/', function () {
 });
 
 Route::resource('job','JobController');
+Route::resource('assigned','AssignedController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/job', 'JobController@index')->name('job');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
