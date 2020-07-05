@@ -65,6 +65,7 @@
 														Vehicle Type: &nbsp;&nbsp; {{$c->vehicle_type}}<br>
 														Lead By: &nbsp;&nbsp; {{$c->name}}<br>
 														Source of Lead:&nbsp;&nbsp;{{$c->lead_from}}<br>
+														Assigned To:&nbsp;&nbsp;{{$c->assigned_to}}<br>
 														<br/>
 														<br/>
 														<form action="{{ route('job.update',$c->id) }}" method="POST" >
