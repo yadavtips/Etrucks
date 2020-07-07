@@ -78,7 +78,7 @@
                                         </div>
                                       </div></td>
                                
-                                    <td><a href="https://wa.me/91{{$c->phone}}?text=I'm%20interested%20in%20your%20car%20for%20sale"  style="font-size:25px;color:rgb(24, 170, 43)">
+                                    <td><a href="whatsapp://91{{$c->phone}}?text=The text to share!"  style="font-size:25px;color:rgb(24, 170, 43)">
                                       <i class="fa fa-whatsapp"  style="font-size:25px;color:rgb(24, 170, 43)"></i></a>
                                   </td>
                               
