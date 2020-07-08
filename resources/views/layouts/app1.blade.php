@@ -13,6 +13,7 @@
 
     <!-- Favicons -->
     <link href="../app_assets/img/favicon.png" rel="icon">
+     <link href="../app_assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="../app_assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -58,10 +59,10 @@
             <nav class="nav-menu">
                 <ul>
                     <li class="active"><a href="/"><i class="bx bx-home"></i> <span>Home</span></a></li>
-                    <li><a href="/post-new-lead"><i class="bx bx-user"></i> <span>Post New Lead</span></a></li>
-                    <li><a href="/edit-lead"><i class="bx bx-user"></i> <span>Edit Leads</span></a></li>
-                    <li><a href="/leads-assigned-to-you"><i class="bx bx-file-blank"></i> <span>Leads Assigned To You</span></a></li>
-    
+                    <li><a href="/post-new-lead"><i class="bx bx-file"></i> <span>Post New Lead</span></a></li>
+                    
+                    <li><a href="/leads-assigned-to-you"><i class="bx bx-list-check"></i> <span>Leads Assigned To You</span></a></li>
+                    <li><a href="/edit-lead"><i class="bx bx-edit-alt"></i> <span>Edit Leads</span></a></li>
                    
 
 
@@ -71,7 +72,7 @@
                             <a class="" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                             <i class="bx bx-envelope"></i>
+                                             <i class="bx bx-log-out-circle"></i>
                                 {{ __('Logout') }}
                             </a>
 
@@ -119,7 +120,7 @@
 
     <!-- Template Main JS File -->
     <script src="../app_assets/js/main.js"></script>
-
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 </body>
 
 </html>
