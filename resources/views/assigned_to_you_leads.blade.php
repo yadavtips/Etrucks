@@ -8,18 +8,18 @@
             <div class="card-header">
                 <h4 class="card-title">Recentely Added Leads</h4>
             </div>
-            <div class="card-body">
+           
                 <div class="table-responsive">
                     <table id="basic-datatables" class="display table table-striped table-hover">
                         <thead class="thead-dark">
                             
                             <tr>
-                                <th>Job Id</th>
+                                <th>Id</th>
                                 
                                
                                 <th>View</th>
                                 <th>Whatsapp</th>
-                                <th>Make Call</th>
+                                <th>Call</th>
                               
                             </tr>
                         </thead>
