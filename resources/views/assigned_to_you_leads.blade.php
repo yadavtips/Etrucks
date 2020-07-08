@@ -1,13 +1,12 @@
 @extends('layouts.app1')
 
 @section('content')
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-  <div class="hero-container" data-aos="fade-in">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-       
+<div class="row">
+    <div class="col-md-12 xs-6">
+        <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Leads Assigned To You</h4>
+                <h4 class="card-title">Recentely Added Leads</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -15,12 +14,12 @@
                         <thead class="thead-dark">
                             
                             <tr>
-                                <th>Id</th>
+                                <th>Job Id</th>
                                 
                                
                                 <th>View</th>
                                 <th>Whatsapp</th>
-                                <th>Call</th>
+                                <th>Make Call</th>
                               
                             </tr>
                         </thead>
@@ -97,8 +96,6 @@
                             </tbody>
 							
                         </table>
-                        </div>
-                        </section>
                               {{--   {!! $jobs->links() !!}  --}}
                               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
