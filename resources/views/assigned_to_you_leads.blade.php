@@ -4,9 +4,8 @@
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
   <div class="hero-container" data-aos="fade-in">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="row">
-    <div class="col-md-12 xs-6">
-        <div class="card">
+
+       
             <div class="card-header">
                 <h4 class="card-title">Leads Assigned To You</h4>
             </div>
