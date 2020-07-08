@@ -120,6 +120,31 @@
             <div class="card-header">
                 <h4 class="card-title">Create New Leads</h4>
             </div>
+            @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
+        @if ($errors->any())
+<div class="alert alert-danger">
+<strong>Whoops!</strong> There were some problems with your input.<br><br>
+<ul>
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+</div>
+@endif
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
             <div class="card-body">
                 <form action="{{ route('job.store') }}" method="POST" >
                     @csrf
