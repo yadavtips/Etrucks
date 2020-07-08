@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app1');
+    return view('auth.login');
 });
 
 Route::resource('job','JobController');
-Route::resource('assigned','AssignedController');
+Route::resource('/leads-assigned-to-you','AssignedController');
 Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/post-new-lead', 'HomeController@index')->name('home');
 Route::get('/job', 'JobController@index')->name('job');
 
 Auth::routes();
