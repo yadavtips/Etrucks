@@ -44,12 +44,7 @@
             
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " >
-          {{$c->created_at}}
-         
-          </a>
-        </li>
+      
     </ul>
   </div>
   <div class="card mb-3">
