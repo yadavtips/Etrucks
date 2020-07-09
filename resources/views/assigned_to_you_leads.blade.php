@@ -12,7 +12,7 @@
 @foreach ($app as $c)
     
 
-<div class="card text-center ">
+<div class="card text-white bg-warning mb-3 ">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
