@@ -6,12 +6,13 @@
     <div class="col-md-12 xs-6">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Recentely Added Leads</h4>
+                <h4 class="card-title">Leads Assigned to You</h4>
+                <br>
 
 @foreach ($app as $c)
     
 
-<div class="card text-center">
+<div class="card text-center ">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
