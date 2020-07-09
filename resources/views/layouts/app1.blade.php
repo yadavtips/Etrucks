@@ -63,6 +63,7 @@
                     
                     <li><a href="/leads-assigned-to-you"><i class="bx bx-list-check"></i> <span>Leads Assigned To You</span></a></li>
                     <li><a href="/edit-lead"><i class="bx bx-edit-alt"></i> <span>Edit Leads</span></a></li>
+                    
                    
 
 
@@ -82,7 +83,7 @@
                         </div>
                     </li>
 
-                    
+                    <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li>
 
                 </ul>
             </nav>

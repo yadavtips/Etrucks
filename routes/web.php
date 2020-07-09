@@ -28,6 +28,7 @@ Route::get('/job', 'JobController@index')->name('job');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'JobController@index')->name('job');
 
 Route::get('/clear', function() {
     Artisan::call('cache:clear');

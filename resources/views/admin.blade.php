@@ -1,5 +1,5 @@
  
-@extends('layouts.app1')
+@extends('layouts.app_admin')
 
 @section('form')
 	
