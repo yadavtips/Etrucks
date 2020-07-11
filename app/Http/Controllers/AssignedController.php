@@ -19,10 +19,13 @@ class AssignedController extends Controller
     public function index()
     { 
         $user = auth()->user();
-        $app = Job::select()->where('assigned_to', '=', $user->name)->get();
+        $app = Job::latest()->select()->where('assigned_to', '=', $user->name)->paginate(6);
+
+        
   
         return view('assigned_to_you_leads',compact('app'))
-            ;
+        ->with('i', (request()->input('page', 1) - 1) * 10);
+            
         
         
         

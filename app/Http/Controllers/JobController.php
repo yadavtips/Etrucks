@@ -54,6 +54,7 @@ class JobController extends Controller
             'remarks' => '',
             'name'=>'',
             'lead_from'=>'required',
+            'load_type' => 'required',
         ]);
 
      

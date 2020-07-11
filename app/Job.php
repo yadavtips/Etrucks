@@ -16,7 +16,7 @@ class Job extends Model
             'name',
             'lead_from',
             'assigned_to',
-            
+            'load_type',
        
     ];
   

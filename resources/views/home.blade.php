@@ -146,9 +146,21 @@
 </div>
 @endif
             <div class="card-body">
+                
                 <form action="{{ route('job.store') }}" method="POST" >
                     @csrf
                     
+                    <div class="form-group">
+                        <label for="sel1">Type:</label> &nbsp;&nbsp;
+
+    <input type="radio" id="load_type" name="load_type" value="load">
+  <label for="load">Load</label> &nbsp;&nbsp;
+  <input type="radio" id="load_type" name="load_type" value="truck">
+  <label for="truck">Truck</label><br>
+ 
+
+</div>
+
                     <input type="hidden" id="custId" name="name" value="{{ Auth::user()->name }}">
                     <div class="form-group">
                         <label class="form-label" for="name">Phone Number</label>
@@ -194,6 +206,9 @@
                      </div>
                   
                       <br>
+
+
+ 
                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Remarks</label>
                         <textarea class="form-control"name="remarks" id="exampleFormControlTextarea1" rows="3"></textarea>

@@ -13,11 +13,18 @@
     
 
 
-<div class="card text-white bg-warning mb-3">
+<div class="card text-black bg-warning mb-3">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link active" href="#">PT {{$c->id}}</a>
+        <a class="nav-link active" href="#">
+@if ($c->load_type == "load")
+PL {{$c->id}}
+@else
+PT {{$c->id}}
+@endif
+        
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://wa.me/91{{$c->phone}}?text=I'm%20interested%20in%20your%20car%20for%20sale">
@@ -121,9 +128,10 @@
   
   </div>
 </div>
-
+<br>
 @endforeach 
-
+{!! $app->links() !!}
+<br>
                 </div>
  
 
