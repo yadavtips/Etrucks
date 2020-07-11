@@ -23,7 +23,7 @@ Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']
 Auth::routes();
 
 Route::get('/post-new-lead', 'HomeController@index')->name('home');
-Route::get('/job', 'JobController@index')->name('job');
+/* Route::get('/job', 'JobController@index')->name('job'); */
 
 Auth::routes();
 

@@ -12,7 +12,8 @@
 @foreach ($app as $c)
     
 
-<div class="card text-center ">
+
+<div class="card border-warning mb-3 ">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
@@ -47,7 +48,8 @@
       
     </ul>
   </div>
-  <div class="card mb-3">
+ 
+  <div class="card-body">
 
     <p class="card-text">
        Phone: &nbsp;&nbsp; {{ $c->phone }} <br>
@@ -60,8 +62,18 @@
 
 
     <!-- Button trigger modal -->
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
     <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
       View
+    </button>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
+      Mark Status
     </button>
     
     <!-- Modal -->
