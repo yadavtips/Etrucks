@@ -27,7 +27,8 @@ PT {{$c->id}}
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://wa.me/91{{$c->phone}}?text=I'm%20interested%20in%20your%20car%20for%20sale">
+        <a class="nav-link" 
+        href="https://wa.me/91{{$c->phone}}?text=Thanks%20for%20your%20valuable%20interest%20shown%20on%20us%0A%0AYour%20mobile%20no.-%{{$c->phone}}%0ATruck%20required-{{$c->vehicle_type}}Load%20from-{{$c->load_from}}Dispatch%20to-{{$c->dispatch_to}}Assign%20to-%20kirti%20m.%20No.%208800119298%0A%0AWe%20will%20call%20you%20as%20soon%20%0A%0AIf%20have%20any%20queries%20please%20call%20us-9717940842%2011%20am%20to%206%20pm">
           
           
             <i class="fa fa-whatsapp"  style="font-size:25px;color:rgb(24, 170, 43)"></i></a>

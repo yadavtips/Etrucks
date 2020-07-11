@@ -1,6 +1,7 @@
  
 @extends('layouts.app_admin')
 
+
 @section('form')
 	
 <div class="content">
@@ -22,13 +23,12 @@
 								<thead class="thead-dark">
 									
 									<tr>
-										<th>Job Id</th>
-										<th>Phone Number</th>
+										<th>Id</th>
 										<th>From</th>
 										<th>To</th>
-                                         <th>Created at</th>
-                                        <th>Lead by</th>
-										<th>Assign Job</th>
+                                         <th>Created</th>
+                                       
+										<th>Assigned To</th>
 										<th>Status</th>
 
 									</tr>
@@ -39,12 +39,18 @@
 									
 									<tr >
 										<td>{{ $c->id }}</td>
-										<td>{{ $c->phone }}</td>
+										
 										<td>{{ $c->load_from }}</td>
 
                                         <td>{{ $c->dispatch_to }}</td>
-                                        <td>{{ $c->created_at }}</td>
-                                        <td>{{ $c->name }}</td>
+										<td>{{ $c->created_at->diffForHumans()}}</td>
+										
+									
+										<td>	@if($c->assigned_to =='')         
+											<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
+																							@else
+																							<a>{{$c->assigned_to}}</a>      
+																							@endif</td>
                                         <td><!-- Button trigger modal -->
 											<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
 												View
@@ -115,13 +121,7 @@
 												  </div>
 												</div>
 											  </div></td>
-											  <td>	@if($c->assigned_to =='')         
-												<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
-																								@else
-																								<a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-																									<path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
-																								  </svg></a>      
-																								@endif</td>
+											  
 										
 
                                     </tr>

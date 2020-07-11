@@ -2,15 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name= “viewport” content=”width=device-width, user-scalable=no” />
+    <link rel="manifest" href="../app_assets/manifest.json">
+    
+    <meta name="theme-color" content="#00A862">
+
+   
  <!-- CSRF Token -->
  <meta name="csrf-token" content="{{ csrf_token() }}">
 
  <title>{{ config('app.name', 'Etrucks') }}</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
-
+<script>
+    navigator.serviceWorker && navigator.serviceWorker.register(‘../app_assets/sw.js’).then(function(registration) {  console.log(‘Excellent, registered with scope: ‘, registration.scope);});
+</script>
     <!-- Favicons -->
     <link href="../app_assets/img/favicon.png" rel="icon">
      <link href="../app_assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
