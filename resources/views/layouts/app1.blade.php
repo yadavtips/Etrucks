@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta name= “viewport” content=”width=device-width, user-scalable=no” />
-    <link rel="manifest" href="../app_assets/manifest.json">
+  {{--   <meta name= “viewport” content=”width=device-width, user-scalable=no” /> --}}
+    {{-- <link rel="manifest" href="../app_assets/manifest.json"> --}}
     
     <meta name="theme-color" content="#00A862">
 
