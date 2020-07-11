@@ -13,7 +13,7 @@
     
 
 
-<div class="card border-warning mb-3 ">
+<div class="card text-white bg-warning mb-3">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
@@ -121,10 +121,9 @@
   
   </div>
 </div>
-<br>
+
 @endforeach 
 
-<br>
                 </div>
  
 
