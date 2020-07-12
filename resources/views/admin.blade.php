@@ -30,6 +30,7 @@
                                        
 										<th>Assigned To</th>
 										<th>Status</th>
+										<th>Whatsapp</th>
 
 									</tr>
 								</thead>
@@ -49,7 +50,8 @@
 										<td>	@if($c->assigned_to =='')         
 											<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
 																							@else
-																							<a>{{$c->assigned_to}}</a>      
+																							<p>{{$c->assigned_to}} <br>{{--  --}}
+																					{{$c->updated_at->diffForHumans()}} </p>    
 																							@endif</td>
                                         <td><!-- Button trigger modal -->
 											<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
@@ -107,9 +109,44 @@
 														</form>
 								
 																										@else
-																										<a><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-																											<path fill-rule="evenodd" d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
-																										  </svg></a>      
+																										<a></a>   
+																										  
+																										  <p>
+																										  <a data-toggle="collapse" href="#collapse{{$c->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+																											  Change
+																											</a>
+																                                  		  </p>
+																										  <div class="collapse" id="collapse{{$c->id}}">
+																											<div class="card card-body">
+																													<form action="{{ route('job.update',$c->id) }}" method="POST" >
+																													@csrf
+																													@method('PUT')
+																													
+																													
+																													<input type="hidden" id="custId" name="id" value="{{ $c->id}}">
+																													<input type="hidden" id="custId" name="name" value="{{ $c->name}}">
+																												
+																													
+																													
+																														<div class="col">
+																															<label for="sel1">Change Asigned Job To:</label>
+																															<select class="form-control" id="sel1" name="assigned_to">
+																																@foreach ($user as $u)
+																																  <option>{{$u->name}}</option>
+																																@endforeach
+																															
+																															  </select>
+																														</div>
+																													
+																													 <br/>
+																													<div class="text-center">
+																														<button type="submit" class="btn btn-outline-primary">Change</button>
+																													</div>
+																													
+																												</form>
+																						
+																											</div>
+																										  </div>
 																										@endif
 
 													
@@ -122,6 +159,12 @@
 												</div>
 											  </div></td>
 											  
+										<td>@if($c->assigned_to =='')   
+											Assign First
+												@else
+											<a href="https://wa.me/91{{$c->phone}}?text=Thank%20you%20for%20getting%20in%20touch%21%0A%0AYour%20Mobile%20No.%20%3D%20%20{{$c->phone}}%0ATruck%20required%20%3D%20{{$c->vehicle_type}}%0ALoad%20from%20%3D%20{{$c->load_from}}%0ADispatch%20to%20%3D%20{{$c->dispatch_to}}%0A%0AYour%20job%20is%20assigned%20to%20{{$c->assigned_to}}%0AMobile%20No%20%3D%209%0A%0A{{$c->assigned_to_number}}%20We%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us-9717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+											@endif
+										</td>
 										
 
                                     </tr>

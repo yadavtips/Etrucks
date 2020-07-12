@@ -25,7 +25,7 @@
                         }
                     });
                 </script>
-            
+            <script src="https://kit.fontawesome.com/31d5ad4544.js" crossorigin="anonymous"></script>
                 <!-- CSS Files -->
                 <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
                 <link rel="stylesheet" href="../assets/css/atlantis.min.css">
