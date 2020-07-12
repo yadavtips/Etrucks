@@ -101,8 +101,10 @@ class JobController extends Controller
     {
         $request->validate([
           
-              'assigned_to'=>'required',
+              'assigned_to'=>'',
               'id'=>'',
+              'lead_status'=>''
+
           ]);
 
         $job->update($request->all());

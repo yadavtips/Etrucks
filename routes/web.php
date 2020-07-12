@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('job','JobController');
+Route::resource('status','StatusController');
 Route::resource('/leads-assigned-to-you','AssignedController');
 Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']);
 Auth::routes();
@@ -29,6 +30,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'JobController@index')->name('job');
+Route::get('/lead-assigned-to-you', 'AssignedController@index')->name('assigned');
 
 Route::get('/clear', function() {
     Artisan::call('cache:clear');

@@ -24,6 +24,7 @@ class CreateJobTable extends Migration
             $table->string('name');
             $table->string('load_type');
             $table->string('assigned_to')->nullable();
+            $table->string('lead_status')->nullable();
             $table->timestamps();
         });
     }

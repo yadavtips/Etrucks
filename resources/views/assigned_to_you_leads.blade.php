@@ -1,6 +1,7 @@
 @extends('layouts.app1')
 
 @section('content')
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="row">
     <div class="col-md-12 xs-6">
@@ -8,6 +9,27 @@
             <div class="card-header">
                 <h4 class="card-title">Leads Assigned to You</h4>
                 <br>
+                @if (session('status'))
+<div class="alert alert-success" role="alert">
+    {{ session('status') }}
+</div>
+@endif
+@if ($errors->any())
+<div class="alert alert-danger">
+<strong>Whoops!</strong> There were some problems with your input.<br><br>
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
+
 
 @foreach ($app as $c)
     
@@ -80,10 +102,57 @@ PT {{$c->id}}
     &nbsp;
     &nbsp;
     &nbsp;
-    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
+    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#status{{ $c->created_at }}">
       Mark Status
     </button>
-    
+  {{-- Mark Status Model --}}
+    <div class="modal fade" id="status{{ $c->created_at }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Mark Status</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="{{ route('status.update',$c->id) }}" method="POST" >
+              @csrf
+              @method('PUT')
+       
+                <div class="col">
+                  <label for="sel1">Mark Lead Status:</label>
+                            <select class="form-control" id="sel1" name="lead_status">
+                    
+                      <option>Call Done</option>
+                      <option>Payment Recieved</option>
+                      <option>Completed</option>
+                                
+                  
+                    </select>
+                </div>
+              
+               <br/>
+              <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary">Mark</button>
+              </div>
+              
+            </form>
+              
+                  
+              
+               <br/>
+             {{--   <a href="tel:5551234567">Call (555)123-4567</a> --}}
+                       </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="{{ $c->created_at }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -111,9 +180,6 @@ PT {{$c->id}}
                   <input type="hidden" id="custId" name="id" value="{{ $c->id}}">
                   <input type="hidden" id="custId" name="name" value="{{ $c->name}}">
               
-                  
-                      
-                  
                    <br/>
                  {{--   <a href="tel:5551234567">Call (555)123-4567</a> --}}
                            </form>
@@ -130,6 +196,9 @@ PT {{$c->id}}
   </div>
 </div>
 <br>
+
+
+
 @endforeach 
 {!! $app->links() !!}
 <br>
