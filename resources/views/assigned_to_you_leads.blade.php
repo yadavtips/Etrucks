@@ -28,7 +28,7 @@ PT {{$c->id}}
       </li>
       <li class="nav-item">
         <a class="nav-link" 
-      href="https://wa.me/91{{$c->phone}}?text=*%20Thank%20you%20for%20getting%20in%20touch%21%20*%0A%0AYour%20Mobile%20No.%20%3D%20%20{{$c->phone}}%0ATruck%20required%20%3D%20{{$c->vehicle_type}}%0ALoad%20from%20%3D%20{{$c->load_from}}%0ADispatch%20to%20%3D%20{{$c->dispatch_to}}%0A%0AYour%20job%20is%20assigned%20to%20{{$c->assigned_to}}%0AMobile%20No%20%3D%209%0A%0A{{$c->assigned_to_number}}%20will%20call%20you%20as%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us-9717940842%2011%20am%20to%206%20pm">
+      href="https://wa.me/91{{$c->phone}}?text=Thank%20you%20for%20getting%20in%20touch%21%0A%0AYour%20Mobile%20No.%20%3D%20%20{{$c->phone}}%0ATruck%20required%20%3D%20{{$c->vehicle_type}}%0ALoad%20from%20%3D%20{{$c->load_from}}%0ADispatch%20to%20%3D%20{{$c->dispatch_to}}%0A%0AYour%20job%20is%20assigned%20to%20{{$c->assigned_to}}%0AMobile%20No%20%3D%209%0A%0A{{$c->assigned_to_number}}%20We%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us-9717940842%2011%20am%20to%206%20pm">
           
           
             <i class="fa fa-whatsapp"  style="font-size:25px;color:rgb(24, 170, 43)"></i></a>
