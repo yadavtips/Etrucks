@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\User;
 use Illuminate\Http\Request;
+use Ixudra\Curl\Facades\Curl;
 
 class AssignedController extends Controller
 {
@@ -90,9 +91,13 @@ class AssignedController extends Controller
             'assigned_to' => 'required',
            ]);
    
+           
+
           Job::update($request->all());
+         /*  $job->update($request->all()); */
           return redirect()->route('job')
           ->with('success','Job Assigned Succesfully' );
+          
     }
 
     /**

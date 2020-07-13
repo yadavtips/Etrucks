@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\User;
 use Illuminate\Http\Request;
+use Ixudra\Curl\Facades\Curl;
 use\Auth;
 
 class JobController extends Controller
@@ -46,7 +47,7 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+         $request->validate([
           $phone='phone' => 'required',
            $type= 'vehicle_type' => 'required',
             $load= 'load_from' => 'required',
@@ -58,13 +59,27 @@ class JobController extends Controller
         ]);
 
      
+        Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
 
+        ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'Check out Etrucks New Lead Created 2'])
+        ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
+
+        ->post();
+        
+        
+        /*  Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')
+  
+        ->withData(['username'=>'t1henryharvin', 'password'=>'88133789', 'sender'=>'COURSE','sendto'=>'8743000998', 'message'=>'test2'])
+
+        ->post(); */
         
         Job::create($request->all());
         return redirect()->route('home')
-        ->with('success','Job' . ' ' . $request['load_from'] .' ' . 'to'. ' ' . $request['dispatch_to'] . ' ' . 'Created Successfully' );
+        ->with('success','Job' . ' ' . $request['load_from'] .' ' . 'to'. ' ' . $request['dispatch_to'] . ' ' . 'Created Successfully' ); 
      
-   
+       
+
+       
   
     }
 
@@ -106,6 +121,13 @@ class JobController extends Controller
               'lead_status'=>''
 
           ]);
+
+          Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
+
+           ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'New Lead Assigned to You. Check Now!!'])
+           ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
+   
+           ->post();
 
         $job->update($request->all());
           return redirect()->route('job')
