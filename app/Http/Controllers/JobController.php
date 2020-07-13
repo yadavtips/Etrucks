@@ -6,6 +6,7 @@ use App\Job;
 use App\User;
 use Illuminate\Http\Request;
 use Ixudra\Curl\Facades\Curl;
+use Carbon\Carbon;
 use\Auth;
 
 class JobController extends Controller
@@ -61,7 +62,7 @@ class JobController extends Controller
      
         Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
 
-        ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'Check out Etrucks New Lead Created 2'])
+        ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'New lead added by'. ' ' .$request['name'] . ' ' . 'on' .' '. Carbon::now()->format('h:i:s - d M y')])
         ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
 
         ->post();
