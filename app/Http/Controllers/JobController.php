@@ -68,11 +68,11 @@ class JobController extends Controller
         ->post();
         
         
-        /*  Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')
+        Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')
   
-        ->withData(['username'=>'t1henryharvin', 'password'=>'88133789', 'sender'=>'COURSE','sendto'=>'8743000998', 'message'=>'test2'])
+        ->withData(['username'=>'t1etruckload', 'password'=>'9818250813', 'sender'=>'ETRUCK','sendto'=>$request['phone'], 'message'=>'Thanks for your interest in Etrucks. We are proccessing you order. We will inform you once your task is assigned to our team. In case of any queries, please reach out us at 91 9717940842 from 11AM to 6 PM'])
 
-        ->post(); */
+        ->post(); 
         
         Job::create($request->all());
         return redirect()->route('home')
