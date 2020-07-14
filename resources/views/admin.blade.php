@@ -3,18 +3,18 @@
 
 <head>
 	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "b743702f-de87-4cf2-84ee-caf932d0259b",
-      notifyButton: {
-        enable: true,
-      },
-      allowLocalhostAsSecureOrigin: true,
-    });
-  });
-</script>
+	<script>
+	  window.OneSignal = window.OneSignal || [];
+	  OneSignal.push(function() {
+		OneSignal.init({
+		  appId: "5f36c6c7-eeaf-4012-9f14-3936507c33d1",
+		  notifyButton: {
+			enable: true,
+		  },
+		  subdomainName: "etrucks-heroku",
+		});
+	  });
+	</script>
 </head>
 @section('form')
 	
