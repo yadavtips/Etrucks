@@ -13,22 +13,22 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="../app_assets/img/favicon.png" rel="icon">
-     <link href="../app_assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../app_assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/app_assets/img/favicon.png" rel="icon">
+     <link href="/app_assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/app_assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../app_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../app_assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="/app_assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/app_assets/vendor/icofont/icofont.min.css" rel="stylesheet">
 
   
     
 
     <!-- Template Main CSS File -->
-    <link href="../app_assets/css/style.css" rel="stylesheet">
+    <link href="/app_assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: iPortfolio - v1.3.0

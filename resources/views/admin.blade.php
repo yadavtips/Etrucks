@@ -1,7 +1,21 @@
  
 @extends('layouts.app_admin')
 
-
+<head>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "b743702f-de87-4cf2-84ee-caf932d0259b",
+      notifyButton: {
+        enable: true,
+      },
+      allowLocalhostAsSecureOrigin: true,
+    });
+  });
+</script>
+</head>
 @section('form')
 	
 <div class="content">

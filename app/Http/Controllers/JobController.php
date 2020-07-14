@@ -70,7 +70,7 @@ class JobController extends Controller
         
         Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')
   
-        ->withData(['username'=>'t1etruckload', 'password'=>'9818250813', 'sender'=>'ETRUCK','sendto'=>$request['phone'], 'message'=>'Thanks for your interest in Etrucks. We are proccessing you order. We will inform you once your task is assigned to our team. In case of any queries, please reach out us at 91 9717940842 from 11AM to 6 PM'])
+        ->withData(['username'=>'t1etruckload', 'password'=>'9818250813', 'sender'=>'ETRUCK','sendto'=>$request['phone'], 'message'=>'Thanks for your interest in Etruckload. We are proccessing you order. We will inform you once your task is assigned to our team. In case of any queries, please reach out us at 91 9717940842 from 11AM to 6 PM'])
 
         ->post(); 
         
@@ -103,7 +103,7 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        //
+        return view('edit_leads',compact('job'));
     }
 
     /**
@@ -119,7 +119,15 @@ class JobController extends Controller
           
               'assigned_to'=>'',
               'id'=>'',
-              'lead_status'=>''
+              'lead_status'=>'',
+              'phone' => '',
+               'vehicle_type' => '',
+               'load_from' => '',
+                'dispatch_to' => '',
+               'remarks' => '',
+               'name'=>'',
+               'lead_from'=>'',
+               'load_type' => '',
 
           ]);
 
