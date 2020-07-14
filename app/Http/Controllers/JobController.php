@@ -74,6 +74,16 @@ class JobController extends Controller
 
         ->post(); 
         
+        Curl::to('https://onesignal.com/api/v1/notifications')
+
+        ->withData(['{"app_id": "5f36c6c7-eeaf-4012-9f14-3936507c33d1",
+            "included_segments": ["All"],
+            "contents": {"en": "New Lead Added"}}'])
+        ->withHeader("authorization: Basic YjNmMmZmY2UtY2VjNy00NjcwLThhY2QtMjIyZWJjYTE4M2Vj"
+        ,"content-type: application/json")
+
+        ->post();
+
         Job::create($request->all());
         return redirect()->route('home')
         ->with('success','Job' . ' ' . $request['load_from'] .' ' . 'to'. ' ' . $request['dispatch_to'] . ' ' . 'Created Successfully' ); 
@@ -137,6 +147,7 @@ class JobController extends Controller
            ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
    
            ->post();
+           
 
         $job->update($request->all());
           return redirect()->route('job')
