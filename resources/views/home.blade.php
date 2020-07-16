@@ -168,7 +168,7 @@
                     <input type="hidden" id="custId" name="name" value="{{ Auth::user()->name }}">
                     <div class="form-group">
                         <label class="form-label" for="name">Phone Number</label>
-                        <input type="text" class="form-control" id="name" name="phone" placeholder="Phone Number" tabindex="1" required>
+                        <input type="number" class="form-control" id="name" name="phone" placeholder="Phone Number" tabindex="1" required>
                     </div>                      
                     
                     <div class="row">

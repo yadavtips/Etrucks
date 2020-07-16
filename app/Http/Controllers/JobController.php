@@ -146,11 +146,24 @@ class JobController extends Controller
 
           Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
 
-           ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'New Lead Assigned to You. Check Now!!'])
+           ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'This Lead Assigned to You. Check Now!!'])
            ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
    
            ->post();
            
+
+
+       Curl::to('https://onesignal.com/api/v1/notifications')
+
+       ->withData(array( 'app_id'=>'5b619c71-feb1-4bb0-a5a3-f813c1dc7599',
+           'included_segments'=> ['All'],
+           'contents'=> ['en'=> 'This lead is assigned to'. ' ' .$request['assigned_to'] . ' ' . 'at' .' '. Carbon::now()->format('h:i:s - d M y')]
+      ))
+      ->asJson()
+       ->withHeader("authorization: Basic Y2IyNzdlNTItMTlkMS00NGNjLWJiNWItMTg3NjkwYTdmNDc1",
+       "content-type:application/json",)
+
+       ->post();
 
         $job->update($request->all());
           return redirect()->route('job')
