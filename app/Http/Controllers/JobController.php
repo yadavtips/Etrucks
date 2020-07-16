@@ -151,6 +151,11 @@ class JobController extends Controller
    
            ->post();
            
+           Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')
+  
+           ->withData(['username'=>'t1etruckload', 'password'=>'9818250813', 'sender'=>'ETRUCK','sendto'=>'8743000998', 'message'=>'Thanks for your interest in Etruckload. Your task is assigned to'. ' ' .$request['assigned_to'] . ' ' . 'at' .' '. Carbon::now()->format('h:i:s - d M y') . 'He will call you soon, In case of any queries, please reach out us at 91 9717940842 from 11AM to 6 PM'])
+   
+           ->post(); 
 
 
        Curl::to('https://onesignal.com/api/v1/notifications')
