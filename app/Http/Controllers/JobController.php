@@ -69,12 +69,12 @@ class JobController extends Controller
 
        Curl::to('https://onesignal.com/api/v1/notifications')
 
-        ->withData(array( 'app_id'=>'5f36c6c7-eeaf-4012-9f14-3936507c33d1',
+        ->withData(array( 'app_id'=>'5b619c71-feb1-4bb0-a5a3-f813c1dc7599',
             'included_segments'=> ['All'],
             'contents'=> ['en'=> 'New lead added by'. ' ' .$request['name'] . ' ' . 'on' .' '. Carbon::now()->format('h:i:s - d M y')]
        ))
        ->asJson()
-        ->withHeader("authorization: Basic YjNmMmZmY2UtY2VjNy00NjcwLThhY2QtMjIyZWJjYTE4M2Vj",
+        ->withHeader("authorization: Basic Y2IyNzdlNTItMTlkMS00NGNjLWJiNWItMTg3NjkwYTdmNDc1",
         "content-type:application/json",)
 
         ->post();
