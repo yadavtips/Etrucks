@@ -24,7 +24,7 @@ class JobController extends Controller
     {   $user = User::all();
         ;
        /*  $user = $job->user;  */
-        $jobs = Job::latest()->paginate(10);
+        $jobs = Job::latest()->paginate(25);
         return view('admin',compact( 'jobs','user'))
            ->with('i', (request()->input('page', 1) - 1) * 10);
            
@@ -64,6 +64,18 @@ class JobController extends Controller
 
         ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'New lead added by'. ' ' .$request['name'] . ' ' . 'on' .' '. Carbon::now()->format('h:i:s - d M y')])
         ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
+
+        ->post();
+
+       Curl::to('https://onesignal.com/api/v1/notifications')
+
+        ->withData(array( 'app_id'=>'5f36c6c7-eeaf-4012-9f14-3936507c33d1',
+            'included_segments'=> ['All'],
+            'contents'=> ['en'=> 'New lead added by'. ' ' .$request['name'] . ' ' . 'on' .' '. Carbon::now()->format('h:i:s - d M y')]
+       ))
+       ->asJson()
+        ->withHeader("authorization: Basic YjNmMmZmY2UtY2VjNy00NjcwLThhY2QtMjIyZWJjYTE4M2Vj",
+        "content-type:application/json",)
 
         ->post();
         
