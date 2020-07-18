@@ -77,7 +77,7 @@ PT {{$c->id}}
       @else
       
       <li class="nav-item">
-        <a class="nav-link" >
+        <a class="nav-link" style="color:green;" >
           
           {{ $c->lead_status }} 
             
@@ -177,7 +177,7 @@ PT {{$c->id}}
               Dispatch To: &nbsp;&nbsp; {{ $c->dispatch_to }}<br>
               Vehicle Type: &nbsp;&nbsp; {{$c->vehicle_type}}<br>
               Lead By: &nbsp;&nbsp; {{$c->name}}<br>
-            
+              Remarks: &nbsp;&nbsp; {{$c->remarks}}<br>
               <br/>
               <br/>
               <form action="{{ route('job.update',$c->id) }}" method="POST" >
