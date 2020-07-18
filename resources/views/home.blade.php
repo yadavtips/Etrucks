@@ -157,9 +157,9 @@
                     <div class="form-group">
                         <label for="sel1">Type:</label> &nbsp;&nbsp;
 
-    <input type="radio" id="load_type" name="load_type" value="load">
+    <input type="radio" id="load_type" name="load_type" value="PL">
   <label for="load">Load</label> &nbsp;&nbsp;
-  <input type="radio" id="load_type" name="load_type" value="truck">
+  <input type="radio" id="load_type" name="load_type" value="PT">
   <label for="truck">Truck</label><br>
  
 
