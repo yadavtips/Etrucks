@@ -24,7 +24,14 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Phone</label>
 
+                            <div class="col-md-6">
+                        <input type="phone" id="custId" class="form-control" name="admin_phone">
+                    </div>
+                </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -60,6 +67,14 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="secret" class="col-md-4 col-form-label text-md-right">Secret Key</label>
+
+                            <div class="col-md-6">
+                        <input type="password" id="custId" class="form-control" name="secret">
+                    </div>
+                </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

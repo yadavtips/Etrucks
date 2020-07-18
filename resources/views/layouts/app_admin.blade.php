@@ -348,6 +348,22 @@
                                         </a>
                                         
                                     </li>
+                                    <br>
+                                    <br>
+        
+                                    
+                                    <li class="nav-item active" style="color:red;">
+                                        <a data-toggle="" href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
+                                            <p>Post New Lead</p>
+                                            
+                                        </a>
+                                        
+                                    </li>
+                                    <br>
+                                    <br>
+                                  
+                                    
                                     
                                     <li class="nav-item dropdown">
                                        

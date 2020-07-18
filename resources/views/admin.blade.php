@@ -12,6 +12,7 @@
         enable: true,
       },
       subdomainName: "etruckload",
+
     });
   });
 </script>
@@ -105,6 +106,8 @@
 															
 															<input type="hidden" id="custId" name="id" value="{{ $c->id}}">
 															<input type="hidden" id="custId" name="name" value="{{ $c->name}}">
+															<input type="hidden" id="custId" name="phone" value="{{ $c->phone}}">
+															
 														
 															
 															
@@ -112,7 +115,8 @@
 																	<label for="sel1">Assign This Job To:</label>
 												                    <select class="form-control" id="sel1" name="assigned_to">
 																		@foreach ($user as $u)
-																		  <option>{{$u->name}}</option>
+																	<option>{{$u->name}} , {{$u->admin_phone}}</option>
+																	
 											                            @endforeach
 																	
 																	  </select>
@@ -142,6 +146,7 @@
 																													
 																													<input type="hidden" id="custId" name="id" value="{{ $c->id}}">
 																													<input type="hidden" id="custId" name="name" value="{{ $c->name}}">
+																													<input type="hidden" id="custId" name="phone" value="{{ $c->phone}}">
 																												
 																													
 																													
@@ -149,7 +154,7 @@
 																															<label for="sel1">Change Asigned Job To:</label>
 																															<select class="form-control" id="sel1" name="assigned_to">
 																																@foreach ($user as $u)
-																																  <option>{{$u->name}}</option>
+																																<option>{{$u->name}} , {{$u->admin_phone}}</option>
 																																@endforeach
 																															
 																															  </select>

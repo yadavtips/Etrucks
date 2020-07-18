@@ -65,17 +65,25 @@ PT {{$c->id}}
           </svg>
         </a>
       </li>
+      @if ($c->lead_status == "")
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" >
           
-          
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-          </svg>
+          No Status
             
         </a>
       </li>
+          
+      @else
       
+      <li class="nav-item">
+        <a class="nav-link" >
+          
+          {{ $c->lead_status }} 
+            
+        </a>
+      </li>
+      @endif
     </ul>
   </div>
  
@@ -124,11 +132,11 @@ PT {{$c->id}}
                   <label for="sel1">Mark Lead Status:</label>
                             <select class="form-control" id="sel1" name="lead_status">
                     
-                      <option>Call Done</option>
-                      <option>Payment Recieved</option>
-                      <option>Completed</option>
-                                
-                  
+                      <option>Talked With Party</option>
+                      <option>Loading Confirmation Done</option>
+                      <option>Vehicle Loaded</option>
+                      <option>Vehicle Unloaded</option>
+                      <option>Vehicle Loaded</option>
                     </select>
                 </div>
               
@@ -169,7 +177,7 @@ PT {{$c->id}}
               Dispatch To: &nbsp;&nbsp; {{ $c->dispatch_to }}<br>
               Vehicle Type: &nbsp;&nbsp; {{$c->vehicle_type}}<br>
               Lead By: &nbsp;&nbsp; {{$c->name}}<br>
-              Source of Lead:&nbsp;&nbsp;{{$c->lead_from}}<br>
+            
               <br/>
               <br/>
               <form action="{{ route('job.update',$c->id) }}" method="POST" >
