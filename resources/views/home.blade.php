@@ -121,35 +121,50 @@
 <div class="row">
     <div class="col-md-12 xs-6">
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Create New Leads</h4>
+            <div class="card-header" style="text-align: center;">
+                <h4 class="card-title" >Create New Leads</h4>
             </div>
+         
+
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+
+     
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+         
+          <p class="font-italic">
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" style="text-align: center;" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
             @if (session('status'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" style="text-align: center;" role="alert">
                 {{ session('status') }}
             </div>
-        @endif
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-        @endif
-        @if ($errors->any())
-<div class="alert alert-danger">
-<strong>Whoops!</strong> There were some problems with your input.<br><br>
-<ul>
-    @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-    @endforeach
-</ul>
-</div>
-@endif
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-<p>{{ $message }}</p>
-</div>
-@endif
-            <div class="card-body">
+            @endif
+            @if ($errors->any())
+    <div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+    </div>
+    @endif
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+    <p>{{ $message }}</p>
+    </div>
+    @endif
                 
                 <form action="{{ route('job.store') }}" method="POST" >
                     @csrf
@@ -212,7 +227,7 @@
                       <br>
 
 
- 
+
                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Remarks</label>
                         <textarea class="form-control"name="remarks" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -223,6 +238,16 @@
                     </div>
                     
                 </form>
+            
+          </p>
+          <div class="row">
+            
+          
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
                               
                           
                          
