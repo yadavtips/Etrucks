@@ -116,52 +116,66 @@
 <head>
   
 </head>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="row">
     <div class="col-md-12 xs-6">
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Create New Leads</h4>
+            <div class="card-header" style="text-align: center;">
+                <h4 class="card-title" >Edit Your Lead</h4>
             </div>
+         
+
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+
+     
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+         
+          <p class="font-italic">
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" style="text-align: center;" role="alert">
+                    {{ session('status') }}
+                </div>
+            @endif
             @if (session('status'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" style="text-align: center;" role="alert">
                 {{ session('status') }}
             </div>
-        @endif
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-        @endif
-        @if ($errors->any())
-<div class="alert alert-danger">
-<strong>Whoops!</strong> There were some problems with your input.<br><br>
-<ul>
-    @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-    @endforeach
-</ul>
-</div>
-@endif
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-<p>{{ $message }}</p>
-</div>
-@endif
-            <div class="card-body">
+            @endif
+            @if ($errors->any())
+    <div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+    </div>
+    @endif
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success">
+    <p>{{ $message }}</p>
+    </div>
+    @endif
                 
-                <form action="{{ route('job.store') }}" method="update" >
+    <form action="{{ route('job.update',$job->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
                     
                     <div class="form-group">
                         <label for="sel1">Type:</label> &nbsp;&nbsp;
 
-    <input type="radio" id="load_type" name="load_type" value="load">
+    <input type="radio" id="load_type" name="load_type"  value="PL"{{ $job->load_type == 'PL' ? 'checked' : '' }}>
   <label for="load">Load</label> &nbsp;&nbsp;
-  <input type="radio" id="load_type" name="load_type" value="truck">
+  <input type="radio" id="load_type" name="load_type" value="PT" {{ $job->load_type == 'PT' ? 'checked' : '' }}>
   <label for="truck">Truck</label><br>
  
 
@@ -170,7 +184,7 @@
                     <input type="hidden" id="custId" name="name" value="{{ Auth::user()->name }}">
                     <div class="form-group">
                         <label class="form-label" for="name">Phone Number</label>
-                    <input type="text" class="form-control" id="name" value="{{$job->phone}}" name="phone" placeholder="Phone Number" tabindex="1" required>
+                    <input type="number" class="form-control" id="name" name="phone" value="{{$job->phone}}" placeholder="Phone Number" tabindex="1" required>
                     </div>                      
                     
                     <div class="row">
@@ -189,6 +203,7 @@
                             
                             <label for="sel1">Vehicle Type (select one):</label>
                             <select class="form-control" id="sel1" name="vehicle_type">
+                                <option>{{$job->vehicle_type}}</option>
                               <option>32 Feet , 7 Ton (32 * 8 * 8) </option>
                               <option>32 Feet , 7 Ton hq (32 * 8 * 9.6)</option>
                               <option>32 Feet , 14 Ton (32 * 8 * 8)</option>
@@ -200,6 +215,7 @@
                         <div class="col">
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
+                                <option>{{$job->lead_from}}</option>
                                 <option>+91 9717940842</option>
                                 <option>+91 7011893820</option>
                                 <option>+91 9350125636</option>
@@ -214,10 +230,10 @@
                       <br>
 
 
- 
+
                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Remarks</label>
-                        <textarea class="form-control"name="remarks"  value="{{$job->remarks}}" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control"name="remarks" id="exampleFormControlTextarea1" rows="3">{{$job->remarks}}</textarea>
                       </div>
                      <br/>
                     <div class="text-center">
@@ -225,11 +241,19 @@
                     </div>
                     
                 </form>
-            </div>
-        </div>         
-                          
+            
+          </p>
+          <div class="row">
+            
+          
+        </div>
+      </div>
+
     </div>
-</div>    
+  </section><!-- End About Section -->
+                              
+                          
+                         
                               {{--   {!! $jobs->links() !!}  --}}
                               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
