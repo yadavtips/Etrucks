@@ -88,7 +88,7 @@
       <li class="nav-item">
         <a class="nav-link" >
           
-          No Status
+          {{$c->created_at->diffForhumans() }}
             
         </a>
       </li>
@@ -103,19 +103,7 @@
         </a>
       </li>
       @endif
-      <li class="nav-item">
-        <a class="nav-link disabled " href="#">
-
-          {{$c->created_at->diffForhumans() }}
-
-
-
-        
-        </a>
-
-        
-        
-      </li>
+      
     </ul>
     
   </div>
