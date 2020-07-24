@@ -7,7 +7,7 @@
     <div class="col-md-12 xs-6">
         <div class="card">
             <div class="card-header" style="text-align: center;">
-                <h4 class="card-title">Leads Assigned to You</h4>
+            <h4 class="card-title">Leads you posted </h4>
             </div>
          <section id="about" class="about">
               <div class="container">
@@ -48,76 +48,36 @@
               @endif
 @foreach ($app as $c)
  
-<div class="card text-black bg-warning mb-3">
+<div class="card border-danger mb-3">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
         <a class="nav-link active" href="#">
 
-          {{$c->load_type}} {{$c->id}} 
+          {{$c->load_type}} {{$c->id}}
 
 
 
         
         </a>
-
+      </li>
+      <li class="nav-item">
         
-        
+      </li>
+      <li class="nav-item">
+      
       </li>
      
-  
-      <li class="nav-item">
-        <a class="nav-link" 
-      href="https://wa.me/91{{$c->phone}}?text=Thank%20you%20for%20contacting%20Etruckload%21%21%0AI%27m%20 {{ Auth::user()->name }}%20%2C%20Your%20Job%20with%20id%20{{$c->load_type}}%20{{$c->id}}%20is%20assigned%20to%20me.">
-          
-          
-            <i class="fa fa-whatsapp"  style="font-size:25px;color:rgb(24, 170, 43)"></i></a>
-            
-        </a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link " href="tel:{{$c->phone}}">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-plus" style="font-size:22px;color:indigo" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M3.925 1.745a.636.636 0 0 0-.951-.059l-.97.97c-.453.453-.62 1.095-.421 1.658A16.47 16.47 0 0 0 5.49 10.51a16.47 16.47 0 0 0 6.196 3.907c.563.198 1.205.032 1.658-.421l.97-.97a.636.636 0 0 0-.06-.951l-2.162-1.682a.636.636 0 0 0-.544-.115l-2.052.513a1.636 1.636 0 0 1-1.554-.43L5.64 8.058a1.636 1.636 0 0 1-.43-1.554l.513-2.052a.636.636 0 0 0-.115-.544L3.925 1.745zM2.267.98a1.636 1.636 0 0 1 2.448.153l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.471 17.471 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969zM12.5 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H12V.5a.5.5 0 0 1 .5-.5z"/>
-            <path fill-rule="evenodd" d="M12 3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H13v2.5a.5.5 0 0 1-1 0v-3z"/>
-          </svg>
-          
-        </a>
-      </li>
-      @if ($c->lead_status == "")
       <li class="nav-item">
         <a class="nav-link" >
           
-          No Status
-            
-        </a>
-      </li>
-          
-      @else
-      
-      <li class="nav-item">
-        <a class="nav-link" style="color:green;" >
-          
-          {{ $c->lead_status }} 
-            
-        </a>
-      </li>
-      @endif
-      <li class="nav-item">
-        <a class="nav-link disabled " href="#">
-
           {{$c->created_at->diffForhumans() }}
-
-
-
-        
+            
         </a>
-
-        
-        
       </li>
-    </ul>
+          
     
+    </ul>
   </div>
  
   <div class="card-body">

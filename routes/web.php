@@ -22,6 +22,7 @@ Route::resource('status','StatusController');
 Route::resource('/leads-assigned-to-you','AssignedController');
 Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']);
 Auth::routes();
+Route::resource('leads-you-posted','EditController');
 
 Route::get('/post-new-lead', 'HomeController@index')->name('home');
 /* Route::get('/job', 'JobController@index')->name('job'); */

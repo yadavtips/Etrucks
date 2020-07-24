@@ -63,7 +63,7 @@
                     <li><a href="/post-new-lead"><i class="bx bx-file"></i> <span>Post New Lead</span></a></li>
                     
                     <li><a href="/leads-assigned-to-you"><i class="bx bx-list-check"></i> <span>Leads Assigned To You</span></a></li>
-                    <li><a href="/edit-lead"><i class="bx bx-edit-alt"></i> <span>Edit Leads</span></a></li>
+                    <li><a href="/leads-you-posted"><i class="bx bx-edit-alt"></i> <span>Leads you posted</span></a></li>
                     
                    
 
