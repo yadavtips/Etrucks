@@ -111,6 +111,7 @@
   <div class="card-body">
 
     <p class="card-text">
+       
        Phone: &nbsp;&nbsp; {{ $c->phone }} <br>
                                                 Load From: &nbsp;&nbsp; {{ $c->load_from }}<br>
                                                 Dispatch To: &nbsp;&nbsp; {{ $c->dispatch_to }}<br>
@@ -187,7 +188,7 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="{{ $c->created_at }}Title">View Lead</h5>
+            <h5 class="modal-title" id="{{ $c->created_at }}Title">View Lead .' '.  {{$c->created_at->diffForhumans() }}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
