@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-
+Route::resource('lead','LeadController');
 Route::resource('job','JobController');
 Route::resource('status','StatusController');
 Route::resource('/leads-assigned-to-you','AssignedController');

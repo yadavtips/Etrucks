@@ -122,7 +122,7 @@
     <div class="col-md-12 xs-6">
         <div class="card">
             <div class="card-header" style="text-align: center;">
-                <h4 class="card-title" >Create New Leads</h4>
+                <h4 class="card-title" >Mark Your Attendance</h4>
             </div>
          
 
@@ -172,9 +172,9 @@
                     <div class="form-group">
                         <label for="sel1">Type:</label> &nbsp;&nbsp;
 
-    <input type="radio" id="load_type" name="load_type" value="PL">
+    <input type="radio" id="load_type" name="load_type" value="PL" required>
   <label for="load">Load</label> &nbsp;&nbsp;
-  <input type="radio" id="load_type" name="load_type" value="PT">
+  <input type="radio" id="load_type" name="load_type" value="PT" required>
   <label for="truck">Truck</label><br>
  
 

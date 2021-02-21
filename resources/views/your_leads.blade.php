@@ -7,7 +7,7 @@
     <div class="col-md-12 xs-6">
         <div class="card">
             <div class="card-header" style="text-align: center;">
-            <h4 class="card-title">Leads you posted </h4>
+            <h4 class="card-title">Leads you posted  {{$count}}</h4>
             </div>
          <section id="about" class="about">
               <div class="container">

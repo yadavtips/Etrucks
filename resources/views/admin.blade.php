@@ -46,6 +46,7 @@
 										<th>Assigned To</th>
 										<th>Status</th>
 										<th>Whatsapp</th>
+										
 										<th>Lead Status</th>
 									
 										
