@@ -185,7 +185,18 @@
 										<td style="text-align: center;">@if($c->assigned_to =='')   
 											Assign First
 												@else
-											<a  href="https://wa.me/91{{$c->phone}}?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%20{{$c->phone}}%0ATruck%20required%20%3D%20{{$c->vehicle_type}}%0ALoad%20from%20%3D%20{{$c->load_from}}%0ADispatch%20to%20%3D%20{{$c->dispatch_to}}%0A%0AYour%20job%20is%20assigned%20to%20{{$c->assigned_to}}.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+												<i class="fab fa-whatsapp fa-lg "style="color:green;" data-toggle="modal" data-target=".bd-example-modal-sm{{ $c->id}}"></i>
+												<div class="modal fade bd-example-modal-sm{{ $c->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+													<div class="modal-dialog modal-sm">
+													  <div class="modal-content">
+														 Party : 	<a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+														<br>
+														 Assignee :<a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+														<br>
+														 Admin : <a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+													  </div>
+													</div>
+												  </div>
 											@endif
 										</td>
 									<td>
