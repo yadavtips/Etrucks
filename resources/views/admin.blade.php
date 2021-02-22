@@ -236,7 +236,7 @@
 								</tbody>
 							
                             </table>
-                             {!! $jobs->links() !!}
+                          
 						</div>
 					</div>
 				</div>
