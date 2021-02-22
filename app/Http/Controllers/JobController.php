@@ -24,9 +24,9 @@ class JobController extends Controller
     {   $user = User::all();
         ;
        /*  $user = $job->user;  */
-        $jobs = Job::latest()->paginate(25);
+        $jobs = Job::latest()->paginate(500);
         return view('admin',compact( 'jobs','user'))
-           ->with('i', (request()->input('page', 1) - 1) * 10);
+           ->with('i', (request()->input('page', 1) - 1) * 500);
            
     }
 
