@@ -247,7 +247,7 @@
 		$('#basic-datatables').DataTable({
   dom: 'Bfrtip',
   buttons: [
-    'copyHtml5', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
+    'pageLength','copyHtml5', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
   ]
 } );
 		</script>
