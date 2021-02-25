@@ -81,7 +81,7 @@
 										<td>{{ $c->load_from }}</td>
 
                                         <td>{{ $c->dispatch_to }}</td>
-										<td>{{ $c->created_at->diffForHumans()}}</td>
+										<td>{{ $c->created_at->format('d/m/Y') }}</td>
 										
 									
 										<td>	@if($c->assigned_to =='')         
