@@ -203,15 +203,22 @@
 										<td style="text-align: center;">@if($c->assigned_to =='')   
 											Assign First
 												@else
+
 												<i class="fab fa-whatsapp fa-lg "style="color:green;" data-toggle="modal" data-target=".bd-example-modal-sm{{ $c->id}}"></i>
 												<div class="modal fade bd-example-modal-sm{{ $c->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 													<div class="modal-dialog modal-sm">
 													  <div class="modal-content">
-														 Party : 	<a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+														 Party : 	<a  href="https://api.whatsapp.com/send?phone=91{{$c->phone}}&text=Thank%20you%20for%20getting%20in%20touch%20with%20Etruckload%20!%20Your%20Mobile%20No.%20%3D%20{{$c->phone}}%20Truck%20required%20%3D%20{{$c->vehicle_type}}%20Load%20from%20%3D%20{{ $c->load_from }}%20Dispatch%20to%20%3D%20{{ $c->dispatch_to }}%20Your%20job%20is%20assigned%20to%20{{$c->assigned_to}}.%20He%20will%20call%20you%20soon.%20If%20have%20any%20queries%20please%20call%20us%209717940842%20" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
 														<br>
-														 Assignee :<a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+														@php
+
+														$string = strstr($c->assigned_to, ',');	
+														$assignee =  str_replace(","," ",$string)
+
+														@endphp
+														 Assignee :<a  href="https://api.whatsapp.com/send?phone=91{{$assignee}}&text=For%20assignee%20and%20admin%0A%0ATruck%20required%20Your%20Mobile%20No.%20%3D%20{{$c->phone}}%20Truck%20required%20%3D%20{{$c->vehicle_type}}%20Load%20from%20%3D%20{{ $c->load_from }}%20Dispatch%20to%20%3D%20{{ $c->dispatch_to }}%20Your%20job%20is%20assigned%20to%20{{$c->assigned_to}}.%20He%20will%20call%20you%20soon.%20If%20have%20any%20queries%20please%20call%20us%209717940842%20"  target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
 														<br>
-														 Admin : <a  href="https://wa.me/919999999999?text=Thank%20you%20for%20getting%20in%20touch%20with%20%20Etruckload%20%21%0A%0AYour%20Mobile%20No.%20%3D%20%209999999999%0ATruck%20required%20%3D%2032 Feet , 7 Ton (32 * 8 * 8)%0ALoad%20from%20%3D%20Delhi%0ADispatch%20to%20%3D%20Gujrat%0A%0AYour%20job%20is%20assigned%20to%20Vinod Yadav , 9911695753.%20He%20will%20call%20you%20soon.%0A%0AIf%20have%20any%20queries%20please%20call%20us%209717940842%2011%20am%20to%206%20pm" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
+														 Admin : <a  href="https://api.whatsapp.com/send?phone=919315436648&text=For%20assignee%20and%20admin%0A%0ATruck%20required%20Your%20Mobile%20No.%20%3D%20{{$c->phone}}%20Truck%20required%20%3D%20{{$c->vehicle_type}}%20Load%20from%20%3D%20{{ $c->load_from }}%20Dispatch%20to%20%3D%20{{ $c->dispatch_to }}%20Your%20job%20is%20assigned%20to%20{{$c->assigned_to}}.%20He%20will%20call%20you%20soon.%20If%20have%20any%20queries%20please%20call%20us%209717940842%20" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
 													  </div>
 													</div>
 												  </div>
@@ -245,6 +252,7 @@
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
+			"order": [[ 0, "desc" ]],
   dom: 'Bfrtip',
   buttons: [
     'pageLength','copyHtml5', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
