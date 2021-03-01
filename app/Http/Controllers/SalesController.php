@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class SalesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,11 +21,20 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $leads = Job::count();
         
        $users = User::all();
-       dd($users);
-        return view('sales',compact('users'));
+       $num = 0;
+       $count = array();
+       foreach($users as $user){
+        $jobs = Job::select('name')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->first();
+     
+        $count[] = $jobs;
+
+       }
+
+
+       
+        return view('sales',compact('count'))->with('i');
     }
 
     /**

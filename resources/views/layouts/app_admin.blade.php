@@ -348,21 +348,24 @@
                                         </a>
                                         
                                     </li>
-
+<br>
                                     <li class="nav-item active">
-                                        <a data-toggle="collapse" href="/" class="collapsed" aria-expanded="false">
-                                            <i class="fas fa-home"></i>
+                                        <a data-toggle="" href="/admin"  style="background:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
                                             <p>Dashboard</p>
                                             
                                         </a>
                                         
                                     </li>
                                     <br>
-                                    <br>
-        
-                                    
-                                 
-                                    <br>
+                                    <li class="nav-item active">
+                                        <a data-toggle="" href="/sales"  style="color:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
+                                            <p>View Sales</p>
+                                            
+                                        </a>
+                                        
+                                    </li>
                                     <br>
                                   
                                      <li class="nav-item active" style="color:red;">

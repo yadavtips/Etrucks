@@ -49,7 +49,7 @@
         <td> <form action="{{ route('account.update',$user->id) }}" method="POST" >
             @method('PUT')
             @csrf
-            <input name="new_password" class="form-group">
+            <input name="new_password" class="form-group" minlength="8">
         <button type="submit" class="btn btn-danger">Update Password</button></td>
         </form>
     </td>

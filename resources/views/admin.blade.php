@@ -255,7 +255,7 @@
 			"order": [[ 0, "desc" ]],
   dom: 'Bfrtip',
   buttons: [
-    'pageLength','copyHtml5', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
+    'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
   ]
 } );
 		</script>
