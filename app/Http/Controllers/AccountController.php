@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Sales;
-use App\Job;
-use App\Lead;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
-class SalesController extends Controller
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +16,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $leads = Job::count();
-        
-       $users = User::all();
-       dd($users);
-        return view('sales',compact('users'));
+        $users = User::all();
+        return view('account' , compact('users'));
     }
 
     /**
@@ -48,10 +44,10 @@ class SalesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sales  $sales
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Sales $sales)
+    public function show($id)
     {
         //
     }
@@ -59,10 +55,10 @@ class SalesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sales  $sales
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sales $sales)
+    public function edit($id)
     {
         //
     }
@@ -71,22 +67,26 @@ class SalesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sales  $sales
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sales $sales)
+    public function update(Request $request, $id)
     {
-        //
+    
+        DB::table('users')->where('id', $id)->update(['password'=> Hash::make($request->new_password)]);
+        return redirect()->back()->with('message', 'Password Changed');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sales  $sales
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sales $sales)
+    public function destroy($id)
     {
-        //
+        DB::table('users')->where('id', $id)->delete();
+        return redirect()->back()->with('message', 'Account Deleted');
     }
 }

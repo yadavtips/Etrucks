@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 Route::resource('lead','LeadController');
 Route::resource('job','JobController');
+Route::resource('account','AccountController');
 Route::resource('status','StatusController');
+Route::resource('sales','SalesController');
 Route::resource('/leads-assigned-to-you','AssignedController');
 Route::get('new/{id}', ['as' => 'get.slug','uses' => 'AssignedController@index']);
 Auth::routes();

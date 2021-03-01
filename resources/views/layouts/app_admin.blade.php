@@ -340,6 +340,15 @@
                                     </div>
                                 </div>
                                 <ul class="nav nav-primary">
+                                    <li class="nav-item active" style="color:red;">
+                                        <a data-toggle="" href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
+                                            <p>Post New Lead</p>
+                                            
+                                        </a>
+                                        
+                                    </li>
+
                                     <li class="nav-item active">
                                         <a data-toggle="collapse" href="/" class="collapsed" aria-expanded="false">
                                             <i class="fas fa-home"></i>
@@ -352,18 +361,18 @@
                                     <br>
         
                                     
-                                    <li class="nav-item active" style="color:red;">
-                                        <a data-toggle="" href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+                                 
+                                    <br>
+                                    <br>
+                                  
+                                     <li class="nav-item active" style="color:red;">
+                                        <a data-toggle="" href="/account"  style="color:red;"class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Post New Lead</p>
+                                            <p>Manage Account</p>
                                             
                                         </a>
                                         
                                     </li>
-                                    <br>
-                                    <br>
-                                  
-                                    
                                     
                                     <li class="nav-item dropdown">
                                        
