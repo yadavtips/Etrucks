@@ -26,7 +26,7 @@ class SalesController extends Controller
        $num = 0;
        $count = array();
        foreach($users as $user){
-        $jobs = Job::select('name')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->first();
+        $jobs = Job::select('name')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->count();
      
         $count[] = $jobs;
 

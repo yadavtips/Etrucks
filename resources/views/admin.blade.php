@@ -36,13 +36,10 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
 </head>
 @section('form')
-	
+
 <div class="content">
 	<div class="page-inner">
-		<div class="page-header">
-			<h4 class="page-title">Dashboard</h4>
-		
-		</div>
+	
 		
 		<div class="row">
 			<div class="col-md-12 xs-6">
@@ -52,14 +49,15 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="basic-datatables" class="display table table-striped table-hover">
+							<table id="basic-datatables" class="display table table-striped table-hover table-sm">
 								<thead class="thead-dark">
 									
 									<tr>
-										<th>Id</th>
+										<th>Vehicle Type</th>
 										<th>From</th>
 										<th>To</th>
-                                         <th>Created</th>
+										<th>Party Num</th>
+                                         <th>Created at</th>
                                        
 										<th>Assigned To</th>
 										<th>Status</th>
@@ -75,22 +73,26 @@
 								<tbody>
 									@foreach ($jobs as $c)
 									
-									<tr >
-										<td>{{ $c->id }}</td>
+									<tr>
+										<td style="font-size: 12px;">{{ $c->load_type }} {{ $c->id }}</td>
 										
-										<td>{{ $c->load_from }}</td>
+										
+										<td style="font-size: 12px;">{{ $c->load_from }}</td>
 
-                                        <td>{{ $c->dispatch_to }}</td>
-										<td>{{ $c->created_at->format('d/m/Y') }}</td>
+                                        <td style="font-size: 12px;">{{ $c->dispatch_to }}</td>
+										<td style="font-size: 12px;">{{ $c->phone }} </td>
+										<td style="font-size: 12px;">
+											{{ $c->created_at }}
+										</td >
 										
 									
-										<td>	@if($c->assigned_to =='')         
+										<td style="font-size: 12px;">	@if($c->assigned_to =='')         
 											<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
 																							@else
-																							<p>{{$c->assigned_to}} <br>{{--  --}}
+																							<p style="font-size: 10px;">{{$c->assigned_to}} <br>{{--  --}}
 																					{{$c->updated_at->diffForHumans()}} </p>    
 																							@endif</td>
-                                        <td><!-- Button trigger modal -->
+                                        <td style="font-size: 12px;"><!-- Button trigger modal -->
 											<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
 												View
 											  </button>
@@ -200,14 +202,14 @@
 												</div>
 											  </div></td>
 											  
-										<td style="text-align: center;">@if($c->assigned_to =='')   
+										<td style="text-align: center;font-size:12px;">@if($c->assigned_to =='')   
 											Assign First
 												@else
 
 												<i class="fab fa-whatsapp fa-lg "style="color:green;" data-toggle="modal" data-target=".bd-example-modal-sm{{ $c->id}}"></i>
 												<div class="modal fade bd-example-modal-sm{{ $c->id}}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 													<div class="modal-dialog modal-sm">
-													  <div class="modal-content">
+													  <div class="modal-content" >
 														 Party : 	<a  href="https://api.whatsapp.com/send?phone=91{{$c->phone}}&text=Thank%20you%20for%20getting%20in%20touch%20with%20Etruckload%20!%20Your%20Mobile%20No.%20%3D%20{{$c->phone}}%20Truck%20required%20%3D%20{{$c->vehicle_type}}%20Load%20from%20%3D%20{{ $c->load_from }}%20Dispatch%20to%20%3D%20{{ $c->dispatch_to }}%20Your%20job%20is%20assigned%20to%20{{$c->assigned_to}}.%20He%20will%20call%20you%20soon.%20If%20have%20any%20queries%20please%20call%20us%209717940842%20" target="_blank"><i class="fab fa-whatsapp fa-lg "style="color:grey;"></i></a>
 														<br>
 														@php
@@ -224,7 +226,7 @@
 												  </div>
 											@endif
 										</td>
-									<td>
+									<td style="font-size: 12px;">
 										@if ($c->lead_status == '')
 										<a style="color:red;text-align:center;">No Status</a>
 										@elseif($c->lead_status == "Completed")
@@ -252,7 +254,7 @@
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
-			"order": [[ 0, "desc" ]],
+			"order": [[ 4, "desc" ]],
   dom: 'Bfrtip',
   buttons: [
     'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'

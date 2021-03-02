@@ -10,7 +10,7 @@
                 
             
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <title>Etrucks CMS</title>
+                <title>Etrucks CRM</title>
                 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
                 <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
             
@@ -35,14 +35,12 @@
                 <script src=“js/jquery.min.js”></script>
             </head>
             <body>
-                <div class="wrapper">
+                <div class="wrapper sidebar_minimize">
                     <div class="main-header">
                         <!-- Logo Header -->
                         <div class="logo-header" data-background-color="blue">
                             
-                            <a href="/" style="color:white;">
-                               Etrucks CMS
-                            </a>
+                           
                             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon">
                                     <i class="icon-menu"></i>
@@ -62,16 +60,7 @@
                             
                             <div class="container-fluid">
                                 <div class="collapse" id="search-nav">
-                                    <form class="navbar-left navbar-form nav-search mr-md-3">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <button type="submit" class="btn btn-search pr-1">
-                                                    <i class="fa fa-search search-icon"></i>
-                                                </button>
-                                            </div>
-                                            <input type="text" placeholder="Search ..." class="form-control">
-                                        </div>
-                                    </form>
+                                  <h2 style="color:white;"> Etrucks CRM</h2>
                                 </div>
                                 <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                                     <li class="nav-item toggle-nav-search hidden-caret">
@@ -403,22 +392,7 @@
             
                     <div class="main-panel">
                         <div class="content">
-                            <div class="panel-header bg-primary-gradient">
-                                <div class="page-inner py-5">
-                                    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-                                        <div>
-                                            <h2 class="text-white pb-2 fw-bold">
-                                                @yield('form-name')
-                                            </h2>
-                                            <h5 class="text-white op-7 mb-2"></h5>
-                                        </div>
-                                        <div class="ml-md-auto py-2 py-md-0">
-                                            <a href="#" class="btn btn-white btn-border btn-round mr-2">View All </a>
-                                            <a href="#" class="btn btn-secondary btn-round">Next Step</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
