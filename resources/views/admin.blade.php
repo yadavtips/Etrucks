@@ -45,7 +45,15 @@
 			<div class="col-md-12 xs-6">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Recentely Added Leads</h4>
+						<h4 class="card-title">Recentely Added Leads &nbsp &nbsp
+							<a href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+							
+								Post New Lead
+								
+							</a>	
+						</h4> 
+							
+						
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
@@ -57,6 +65,7 @@
 										<th>From</th>
 										<th>To</th>
 										<th>Party Num</th>
+										<th>Vehicle Type</th>
                                          <th>Created at</th>
                                        
 										<th>Assigned To</th>
@@ -81,6 +90,7 @@
 
                                         <td style="font-size: 12px;">{{ $c->dispatch_to }}</td>
 										<td style="font-size: 12px;">{{ $c->phone }} </td>
+										<td style="font-size: 12px;">{{$c->vehicle_type}}</td>
 										<td style="font-size: 12px;">
 											{{ $c->created_at }}
 										</td >
@@ -90,7 +100,9 @@
 											<a><IMG SRC="http://www.gifandgif.eu/animated_gif/New/Animated%20Gif%20New%20(33).gif"></a>
 																							@else
 																							<p style="font-size: 10px;">{{$c->assigned_to}} <br>{{--  --}}
-																					{{$c->updated_at->diffForHumans()}} </p>    
+																					{{$c->updated_at->diffForHumans()}} <br>
+																					{{$c->updated_at}}</p> 
+
 																							@endif</td>
                                         <td style="font-size: 12px;"><!-- Button trigger modal -->
 											<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
@@ -284,7 +296,7 @@
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
-			"order": [[ 4, "desc" ]],
+			"order": [[ 5, "desc" ]],
   dom: 'Bfrtip',
   buttons: [
     'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'

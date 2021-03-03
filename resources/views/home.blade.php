@@ -202,10 +202,11 @@
                             
                             <label for="sel1">Vehicle Type (select one):</label>
                             <select class="form-control" id="sel1" name="vehicle_type">
-                                <option>32 Feet , 9 Ton (32 * 8 * 8) </option>
-                                <option>32 Feet , 9 Ton hq (32 * 8 * 9.6)</option>
+                                
                               <option>32 Feet , 7 Ton (32 * 8 * 8) </option>
                               <option>32 Feet , 7 Ton hq (32 * 8 * 9.6)</option>
+                              <option>32 Feet , 9 Ton (32 * 8 * 8) </option>
+                                <option>32 Feet , 9 Ton hq (32 * 8 * 9.6)</option>
                               <option>32 Feet , 14 Ton (32 * 8 * 8)</option>
                               <option>32 Feet , 14 Ton hq (32 * 8 * 9.6)</option>
                               <option>32 Feet , 17 Ton (32 * 8 * 8)</option>
@@ -220,6 +221,8 @@
                                 <option>+91 9350125636</option>
                                 <option>+91 9911695753</option>
                                 <option>+91 8800119298</option>
+                                <option>+91 9315436648</option>
+                                <option>+91 828743353</option>
                                 <option>Indiamart</option>
                                 <option>Facebook</option>
                                 <option>Linkedin</option>
