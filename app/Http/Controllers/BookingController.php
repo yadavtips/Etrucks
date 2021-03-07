@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
 use Illuminate\Http\Request;
-use App\Job;
-use Carbon\Carbon;
 
-class EditController extends Controller
+class BookingController extends Controller
 {
     public function __construct()
     {
@@ -19,13 +18,7 @@ class EditController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        $app = Job::latest()->select()->where('name', '=', $user->name)->paginate(6);
-        $count = Job::where('name', '=', $user->name)->whereDate('created_at', Carbon::today())->count();
-        
-  
-        return view('your_leads',compact('app','count'))
-        ->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('booking');
     }
 
     /**
@@ -52,10 +45,10 @@ class EditController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Booking $booking)
     {
         //
     }
@@ -63,10 +56,10 @@ class EditController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Booking $booking)
     {
         //
     }
@@ -75,10 +68,10 @@ class EditController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Booking $booking)
     {
         //
     }
@@ -86,10 +79,10 @@ class EditController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Booking $booking)
     {
         //
     }

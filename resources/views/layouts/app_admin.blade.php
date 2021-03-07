@@ -147,7 +147,16 @@
                                         </a>
                                         
                                     </li>
-                                    
+                                    <br>
+
+                                    <li class="nav-item active">
+                                        <a data-toggle="" href="/booking"  style="background:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
+                                            <p>Booking</p>
+                                            
+                                        </a>
+                                        
+                                    </li>
                                     <li class="nav-item dropdown">
                                        
                                         <div class="" aria-labelledby="">

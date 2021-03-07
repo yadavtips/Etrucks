@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::resource('lead','LeadController');
 Route::resource('job','JobController');
 Route::resource('account','AccountController');
+Route::resource('booking','BookingController');
 Route::resource('status','StatusController');
 Route::resource('sales','SalesController');
 Route::resource('/leads-assigned-to-you','AssignedController');
