@@ -14,7 +14,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Total leads assigned: {{ $count[$num++] }}</li>
-                  <li class="list-group-item">Leads Converted :{!! $stat[$num++] !!}</li>
+                  <li class="list-group-item">Leads Converted :{{ $stat[$num1++] }}</li>
                   <li class="list-group-item">Total Target : </li>
                 </ul>
               </div>
