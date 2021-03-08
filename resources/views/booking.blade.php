@@ -163,7 +163,7 @@
 								</tbody>
 							
                             </table>
-                            {{ $booking->links() }}
+                            {{-- {{ $booking->links() }} --}}
 						</div>
 					</div>
 				</div>
