@@ -4,7 +4,7 @@
 <br>
 <div class="container">
     <div class="row">
-        @foreach ($count as $user)
+        @foreach ($name as $user)
     
         <div class="col-4">
             <div class="card" style="width: 18rem;">
@@ -13,7 +13,7 @@
                  <p></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Total leads : </li>
+                  <li class="list-group-item">Total leads assigned: {{ $count[$num++] }}</li>
                   <li class="list-group-item">Leads Converted :</li>
                   <li class="list-group-item">Total Target : </li>
                 </ul>

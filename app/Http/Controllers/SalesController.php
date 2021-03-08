@@ -25,19 +25,17 @@ class SalesController extends Controller
        $users = User::all();
        $num = 0;
        $count = array();
-       $names = array();
        foreach($users as $user){
-        $name = Job::select('phone')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->get();
         $jobs = Job::select('name')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->count();
-        
-        $names[] = $name;
+        $jobs1 = Job::select('assigned_to')->where('assigned_to', '=', $user->name.' ' .','.' '.$user->admin_phone)->first();
         $count[] = $jobs;
+       
+        $name[] = $user->name;
+        
 
        }
-dd($names[3][0]->name);
 
-       
-        return view('sales',compact('count'))->with('i');
+        return view('sales',compact('count','name','num'))->with('i');
     }
 
     /**
