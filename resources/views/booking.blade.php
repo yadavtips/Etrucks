@@ -64,7 +64,8 @@
 								<thead class="thead-dark">
 									
 									<tr>
-									
+
+	<td>ID</td> 								
 <td>BOOKING ID</td> 
 <td>ATTACH BY</td> 
 <td>LOAD DATE</td> 
@@ -114,6 +115,7 @@
 									
                                         @foreach ($booking as $book)
                                         <tr>
+                                        <td>{{$book->id}}</td>
                                         <td>{{$book->booking}}</td>
                                         <td>{{$book->attach}}</td>
                                         <td>{{$book->load_date}}</td>
