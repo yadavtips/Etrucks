@@ -18,7 +18,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $booking = Booking::all();
+        $booking = Job::all();
        dd($booking);
     }
 
