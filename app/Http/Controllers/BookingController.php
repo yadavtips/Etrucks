@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
-use App\Job;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -19,8 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $booking = Job::all();
-       dd($booking);
+        $booking = Booking::all();
+       dd( $booking);
     }
 
     /**
