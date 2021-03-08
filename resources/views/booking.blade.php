@@ -126,10 +126,10 @@
                                         <td>{{$book->status2}}</td>
                                         <td>{{$book->status3}}</td>
                                         <td>{{$book->call_status}}</td>
-                                        @endforeach
                                        
+                                        @endforeach
                                     </tr>
-                                    @endforeach
+                                  
 								</tbody>
 							
                             </table>
