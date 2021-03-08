@@ -48,7 +48,7 @@
 			<div class="col-md-12 xs-6">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Recentely Added Leads &nbsp &nbsp
+						<h4 class="card-title">Bookings
 							<a href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
 							
 								Post New Lead
@@ -64,20 +64,48 @@
 								<thead class="thead-dark">
 									
 									<tr>
-										<th>Vehicle Type</th>
-										<th>From</th>
-										<th>To</th>
-										<th>Party Num</th>
-										<th>Vehicle Type</th>
-                                         <th>Created at</th>
-                                       
-										<th>Assigned To</th>
-										<th>Status</th>
-										<th>Whatsapp</th>
-										
-										<th>Lead Status</th>
 									
-										
+<td>BOOKING ID</td> 
+<td>ATTACH BY</td> 
+<td>LOAD DATE</td> 
+<td>LOAD POINT</td> 
+<td>UNLOAD POINT</td> 
+<td>TRUCK NO.</td> 
+<td>TRUCK TYPE</td> 
+<td>DRIVER NO.</td> 
+<td>Owner Name</td> 
+<td>Owner No</td> 
+<td>TPT NAME</td> 
+<td>TPT MOBILE</td> 
+<td>MOBILE 2</td> 
+<td>TPT ACC. NAME</td> 
+<td>TPT ACC NO.</td> 
+<td>IFSC CODE</td> 
+<td>GAADI RATE</td> 
+<td>ADV.2 TPT DETAILS</td> 
+<td>ADVANCE TOTAL TPT.</td> 
+<td>NEFT/IMPS TXN ID</td> 
+<td>PRIZE MONEY TPT</td> 
+<td>DRIVER ADV.</td> 
+<td>BAL.TPT & PAID ON BAL.</td> 
+<td>POD DOC RECV.</td> 
+<td>PARTY NAME</td> 
+<td>PARTY NUMBER</td> 
+<td>RATE</td> 
+<td>ADVANCE BY PARTY</td> 
+<td>ADVANCE TOTAL PARTY</td> 
+<td>NEFT/IMPS TXN DETAILS</td> 
+<td>PRIZE MONEY PARTY</td> 
+<td>BAL.ON PARTY & RECD.</td> 
+<td>PROFIT</td> 
+<td>POD SENT</td> 
+<td>GST BILL NO.</td> 
+<td>Verify Docs-Email/WhatsBAG/Copy</td> 
+<td>STATUS 1</td> 
+<td>STATUS 2</td> 
+<td>STATUS 3</td> 
+<td>CALL</td>
+
 
 									</tr>
 								</thead>
@@ -133,7 +161,7 @@
 								</tbody>
 							
                             </table>
-                           
+                            {{ $booking->links() }}
 						</div>
 					</div>
 				</div>
