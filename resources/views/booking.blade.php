@@ -83,9 +83,9 @@
 								</thead>
 
 								<tbody>
-									<tr>
+									
                                         @foreach ($booking as $book)
-                                        
+                                        <tr>
                                         <td>{{$book->booking}}</td>
                                         <td>{{$book->attach}}</td>
                                         <td>{{$book->load_date}}</td>
@@ -126,9 +126,9 @@
                                         <td>{{$book->status2}}</td>
                                         <td>{{$book->status3}}</td>
                                         <td>{{$book->call_status}}</td>
-                                       
-                                        @endforeach
                                     </tr>
+                                        @endforeach
+                                   
                                   
 								</tbody>
 							
