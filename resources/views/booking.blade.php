@@ -71,7 +71,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputCity">TPT Mobile</label>
-                  <input type="text" class="form-control" name="TPT Mobile" placeholder="TPT Mobile" id="inputCity">
+                  <input type="text" class="form-control" name="tpt_mob" placeholder="TPT Mobile" id="inputCity">
               
                 </div>
               
