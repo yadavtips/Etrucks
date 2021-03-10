@@ -44,7 +44,13 @@
 
 <div class="content">
 	<div class="page-inner">
-	
+    @if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
 		
 		<div class="row">
 			<div class="col-md-12 xs-6">
@@ -67,7 +73,9 @@
 									
 									<tr>
 
-	<td>ID</td> 								
+	<td>ID</td> 		
+  <td>EDIT</td>				
+  <td>DELETE</td>			
 <td>BOOKING ID</td> 
 <td>ATTACH BY</td> 
 <td>LOAD DATE</td> 
@@ -118,6 +126,8 @@
                                         @foreach ($booking as $book)
                                         <tr>
                                         <td>{{$book->id}}</td>
+                                        <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                                        <td style="color: red;"><i class="fa fa-times" aria-hidden="true"></i></td>
                                         <td>{{$book->booking}}</td>
                                         <td>{{$book->attach}}</td>
                                         <td>{{$book->load_date}}</td>
