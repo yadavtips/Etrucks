@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Route::resource('lead','LeadController');
+Route::resource('setting','SettingController');
 Route::resource('job','JobController');
 Route::resource('account','AccountController');
 Route::resource('booking','BookingController');
