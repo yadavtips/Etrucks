@@ -51,12 +51,11 @@
 				<div class="card">
 					<div class="card-header">
 						<h4 class="card-title">Bookings
-							<a href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
-							
+					
 								&nbsp &nbsp <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">  Add New Booking</button>
               
 								
-							</a>	
+						
 						</h4> 
 							
 						
