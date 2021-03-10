@@ -157,6 +157,16 @@
                                         </a>
                                         
                                     </li>
+                                    <br>
+
+                                    <li class="nav-item active">
+                                        <a data-toggle="" href="/setting"  style="background:red;"class="collapsed" aria-expanded="false">
+                                            <i class=""></i>
+                                            <p>Settings</p>
+                                            
+                                        </a>
+                                        
+                                    </li>
                                     <li class="nav-item dropdown">
                                        
                                         <div class="" aria-labelledby="">
