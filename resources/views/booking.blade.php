@@ -186,7 +186,8 @@
     <div class="modal-content">
      
 <div class="container">
-  <form>
+  <form action="{{ route('booking.store') }}" method="POST" >
+    @csrf
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Booking ID</label>

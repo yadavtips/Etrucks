@@ -40,7 +40,11 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Job::create($request->all());
+        return redirect()->route('booking')
+        ->with('success','Booking Created Successfully' ); 
+     
+       
     }
 
     /**
