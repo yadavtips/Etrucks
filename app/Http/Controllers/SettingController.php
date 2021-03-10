@@ -36,7 +36,8 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Setting::create($request->all());
+        return redirect()->back()->with('success', 'Setting Created');
     }
 
     /**
