@@ -112,18 +112,18 @@
                                 </div>
                                 <ul class="nav nav-primary">
                                     <li class="nav-item active" style="color:red;">
-                                        <a data-toggle="" href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/home"  style="background: chartreuse;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Post New Lead</p>
+                                            <p style="color: white">Post New Lead</p>
                                             
                                         </a>
                                         
                                     </li>
 <br>
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/admin"  style="background:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/admin"  style="background: purple;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Dashboard</p>
+                                            <p style="color: white" >Dashboard</p>
                                             
                                         </a>
                                         
@@ -132,7 +132,7 @@
                                     <li class="nav-item active">
                                         <a data-toggle="" href="/sales"  style="color:red;"class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>View Sales</p>
+                                            <p style="color: white" >View Sales</p>
                                             
                                         </a>
                                         
@@ -142,7 +142,7 @@
                                      <li class="nav-item active" style="color:red;">
                                         <a data-toggle="" href="/account"  style="color:red;"class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Manage Account</p>
+                                            <p style="color: white" >Manage Account</p>
                                             
                                         </a>
                                         
@@ -150,9 +150,9 @@
                                     <br>
 
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/booking"  style="background:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/booking"  style="background: chartreuse;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Booking</p>
+                                            <p style="color: white" >Booking</p>
                                             
                                         </a>
                                         
@@ -160,9 +160,9 @@
                                     <br>
 
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/setting"  style="background:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/setting"  style="background: chartreuse;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
-                                            <p>Settings</p>
+                                            <p style="color: white">Settings</p>
                                             
                                         </a>
                                         
