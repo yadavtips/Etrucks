@@ -184,7 +184,7 @@
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
-			"order": [[ 1, "desc" ]],
+			"order": [[ 0, "desc" ]],
   dom: 'Bfrtip',
   buttons: [
     'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
