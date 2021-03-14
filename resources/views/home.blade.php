@@ -203,7 +203,7 @@
                             <label for="sel1">Vehicle Type (select one):</label>
                             <select class="form-control" id="sel1" name="vehicle_type">
                                 @foreach ($settings as $setting)
-                                <option>{{$setting->vehicle_type ?? " "}}</option>
+                                <option>{{$setting->vehicle_type ?? ""}}</option>
                                 @endforeach
                           
                             </select>
@@ -211,7 +211,10 @@
                         <div class="col">
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
-                                <option>+91 9717940842</option>
+                                @foreach ($settings as $setting)
+                                <option>{{$setting->lead_source ?? ""}}</option>
+                                @endforeach
+                              {{--   <option>+91 9717940842</option>
                                 <option>+91 7011893820</option>
                                 <option>+91 9350125636</option>
                                 <option>+91 9911695753</option>
@@ -222,7 +225,7 @@
                                 <option>Facebook</option>
                                 <option>Linkedin</option>
 
-                                <option>Misc.</option>
+                                <option>Misc.</option> --}}
                               </select>
                         </div>
                      </div>
