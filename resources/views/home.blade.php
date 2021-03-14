@@ -212,7 +212,7 @@
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
                                 @foreach ($settings as $setting)
-                                @if ($setting = NULL)
+                                @if ($setting->isEmpty())
                                     
                                 @else
                                 <option>{{$setting->lead_source}}</option>
