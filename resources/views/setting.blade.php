@@ -69,7 +69,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     @foreach ($setting as $lead)
-                    <li class="list-group-item">{{$type->leadsource}}</li>
+                    <li class="list-group-item">{{$type->lead_source}}</li>
                     @endforeach
                 </ul>
               </div>
