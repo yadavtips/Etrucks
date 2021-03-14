@@ -25,6 +25,28 @@
       </div>
     </div>
   </div>
+  
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <form action="{{ route('setting.store') }}" method="POST" >
+                @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Lead Source</label>
+                  <input type="text" class="form-control" name="lead_source" id="exampleInputEmail1" placeholder="Enter Vehicle Type">
+
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
 <div class="container">
     <div class="row">
         <div class="col-4">
@@ -43,7 +65,7 @@
         <div class="col-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-header">
-                  Lead Source
+                  Lead Source <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter1">Lead Source </button>
                 </div>
                 <ul class="list-group list-group-flush">
                     @foreach ($setting as $lead)

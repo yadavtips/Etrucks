@@ -212,12 +212,7 @@
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
                                 @foreach ($settings as $setting)
-                                @if ($setting->isEmpty())
-                                    
-                                @else
                                 <option>{{$setting->lead_source}}</option>
-                                @endif
-                              
                                 @endforeach
                               {{--   <option>+91 9717940842</option>
                                 <option>+91 7011893820</option>
