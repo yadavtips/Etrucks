@@ -121,7 +121,7 @@
                                     </li>
 <br>
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/admin"  style="background: purple;" class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/admin"  style="background: darkorange;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
                                             <p style="color: white" >Dashboard</p>
                                             
@@ -130,7 +130,7 @@
                                     </li>
                                     <br>
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/sales"  style="color:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/sales"  style="background:violet"class="collapsed" aria-expanded="false">
                                             <i class=""></i>
                                             <p style="color: white" >View Sales</p>
                                             
@@ -140,7 +140,7 @@
                                     <br>
                                   
                                      <li class="nav-item active" style="color:red;">
-                                        <a data-toggle="" href="/account"  style="color:red;"class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/account"  style="background: teal;"class="collapsed" aria-expanded="false">
                                             <i class=""></i>
                                             <p style="color: white" >Manage Account</p>
                                             
@@ -150,7 +150,7 @@
                                     <br>
 
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/booking"  style="background: chartreuse;" class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/booking"  style="background: indianred;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
                                             <p style="color: white" >Booking</p>
                                             
@@ -160,7 +160,7 @@
                                     <br>
 
                                     <li class="nav-item active">
-                                        <a data-toggle="" href="/setting"  style="background: chartreuse;" class="collapsed" aria-expanded="false">
+                                        <a data-toggle="" href="/setting"  style="background: deeppink;" class="collapsed" aria-expanded="false">
                                             <i class=""></i>
                                             <p style="color: white">Settings</p>
                                             
