@@ -211,7 +211,7 @@
                         <div class="col">
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
-                                @foreach ($settings as $setting)
+                                @foreach ($settings->slice(9,20) as $setting)
                                 <option>{{$setting->lead_source}}</option>
                                 @endforeach
                               {{--   <option>+91 9717940842</option>
