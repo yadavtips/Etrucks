@@ -33,12 +33,6 @@
                 <!-- CSS Just for demo purpose, don't include it in your project -->
                 <link rel="stylesheet" href="../assets/css/demo.css">
                 <script src=“js/jquery.min.js”></script>
-                <style>
-                    .sidebar.sidebar-style-2 .nav.nav-primary>.nav-item.active>a {
-    background: transparent !important;
-    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.1),4px 4px 15px -5px rgba(21,114,232,.4)!important;
-}
-                    </style>
             </head>
             <body>
                 <div class="wrapper sidebar_minimize">
