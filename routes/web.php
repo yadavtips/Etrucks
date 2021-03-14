@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Setting;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,4 +40,9 @@ Route::get('/lead-assigned-to-you', 'AssignedController@index')->name('assigned'
 Route::get('/clear', function() {
     Artisan::call('cache:clear');
     return "Cache is cleared";
+});
+
+View::composer(['*'], function ($view) {
+	$setting = Setting::all();
+    $view->with('settings', $setting);
 });

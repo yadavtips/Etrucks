@@ -202,15 +202,10 @@
                             
                             <label for="sel1">Vehicle Type (select one):</label>
                             <select class="form-control" id="sel1" name="vehicle_type">
-                                
-                              <option>32 Feet , 7 Ton (32 * 8 * 8) </option>
-                              <option>32 Feet , 7 Ton hq (32 * 8 * 9.6)</option>
-                              <option>32 Feet , 9 Ton (32 * 8 * 8) </option>
-                                <option>32 Feet , 9 Ton hq (32 * 8 * 9.6)</option>
-                              <option>32 Feet , 14 Ton (32 * 8 * 8)</option>
-                              <option>32 Feet , 14 Ton hq (32 * 8 * 9.6)</option>
-                              <option>32 Feet , 17 Ton (32 * 8 * 8)</option>
-                              <option>32 Feet , 17 Ton hq (32 * 8 * 9.6)</option>
+                                @foreach ($settings as $setting)
+                                <option>{{$setting->vehicle_type ?? " "}}</option>
+                                @endforeach
+                          
                             </select>
                         </div>
                         <div class="col">
