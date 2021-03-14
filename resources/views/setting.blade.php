@@ -68,9 +68,9 @@
                   Lead Source <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter1">Lead Source </button>
                 </div>
                 <ul class="list-group list-group-flush">
-                  @foreach ($settings as $setting)
-                  <option>{{$setting->lead_source}}</option>
-                  @endforeach
+                    @foreach ($settings->slice(9,20) as $setting)
+                    <li class="list-group-item">{{$setting->lead_source}}</li>
+                    @endforeach
                 </ul>
               </div>
         </div>
