@@ -65,7 +65,7 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        //
+        return view('edit_booking',compact('booking'));
     }
 
     /**
