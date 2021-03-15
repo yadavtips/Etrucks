@@ -1,6 +1,6 @@
-@extends('layouts.app1')
+@extends('layouts.app_admin')
 
-@section('content')
+@section('form')
 <div class="container">
     <form action="{{ route('booking.update',$booking->id) }}" enctype="multipart/form-data" method="POST">
         @csrf
