@@ -2,6 +2,11 @@
 
 @section('form')
 <div class="container">
+    @if (session('status'))
+    <div class="alert alert-success" style="text-align: center;" role="alert">
+        {{ session('status') }}
+    </div>
+@endif
     <form action="{{ route('booking.update',$booking->id) }}" enctype="multipart/form-data" method="POST">
         @csrf
         @method('PUT')
