@@ -126,7 +126,7 @@
                                         @foreach ($booking as $book)
                                         <tr>
                                         <td>{{$book->id}}</td>
-                                        <td><i class="fa fa-pencil-square-o" aria-hidden="true"></i></td>
+                                        <td> <a href="{{ route('booking.edit', $book->id) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
                                         <td style="color: red;"><i class="fa fa-times" aria-hidden="true"></i></td>
                                         <td>{{$book->booking}}</td>
                                         <td>{{$book->attach}}</td>
