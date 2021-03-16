@@ -28,7 +28,9 @@ class BookingController extends Controller
         $booking = Booking::all();
         foreach($booking as $book){
            $value =  str_replace("YB000","",$book->booking);
+           if( is_numeric($value) == 1 ){
             $test = Booking::where('booking', '=', $book->booking)->update(array('id' => $value));
+           }
         };
      //   return view('booking',compact( 'booking'));
     }
