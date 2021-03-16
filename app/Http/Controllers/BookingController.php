@@ -22,11 +22,15 @@ class BookingController extends Controller
             $test = Booking::where('id', '=', $i)->update(array('id' => $i));
         
         };
+        echo "done";
  
         
       
-        $booking = Booking::all();
-        return view('booking',compact( 'booking'));
+        /* $booking = Booking::all();
+        foreach($booking as $book){
+            
+        }
+        return view('booking',compact( 'booking')); */
     }
 
     /**
