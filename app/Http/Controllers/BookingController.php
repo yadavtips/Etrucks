@@ -26,7 +26,12 @@ class BookingController extends Controller
         
       
         $booking = Booking::all();
-        return view('booking',compact( 'booking'));
+        foreach($booking as $book){
+            $val = $book->id;
+            $i = $val-373;
+            $test = Booking::where('id', '=', $book->id)->update(array('id' => $i));
+        }
+     //   return view('booking',compact( 'booking'));
     }
 
     /**
