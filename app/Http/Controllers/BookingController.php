@@ -18,6 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
+        $val = 373;
+        $test = Booking::where('id', '=', $val)->update(1);
         $booking = Booking::all();
         return view('booking',compact( 'booking'));
     }
