@@ -18,16 +18,16 @@ class BookingController extends Controller
      */
     public function index()
     {
-        for($i=373;$i<1050;$i++){
+     /*    for($i=373;$i<1050;$i++){
             $val = $i++;
             $test = Booking::where('id', '=', $val)->update(array('id' => $val));
         
         };
-
+ */
         
       
-     //   $booking = Booking::all();
-     //   return view('booking',compact( 'booking'));
+        $booking = Booking::all();
+        return view('booking',compact( 'booking'));
     }
 
     /**
