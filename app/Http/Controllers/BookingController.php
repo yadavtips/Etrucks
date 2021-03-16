@@ -18,9 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        for($i=373;$i<1050;$i++){
-            $val = $i;
-            $test = Booking::where('id', '=', $val)->update(array('id' => $val));
+        for($i=374;$i<1050;$i++){
+            $test = Booking::where('id', '=', $i)->update(array('id' => $i));
         
         };
  
