@@ -78,9 +78,9 @@
         
                 <ul class="list-group list-group-flush">
                     @foreach ($setting as $type)
-                    @if( count($type->vehicle_type) )
+                    @if( $type->vehicle_type != NULL )
                     <li class="list-group-item">{{$type->vehicle_type}}</li>
-                @endif
+                    @endif
              
                   @endforeach
                 </ul>
