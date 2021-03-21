@@ -35,7 +35,28 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Lead Source</label>
-                  <input type="text" class="form-control" name="lead_source" id="exampleInputEmail1" placeholder="Enter Vehicle Type">
+                  <input type="text" class="form-control" name="lead_source" id="exampleInputEmail1" placeholder="Lead Source">
+
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <form action="{{ route('setting.store') }}" method="POST" >
+                @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Payment Terms</label>
+                  <input type="text" class="form-control" name="extra1" id="exampleInputEmail1" placeholder="Payment Terms">
 
                 </div>
                
@@ -74,18 +95,18 @@
                 </ul>
               </div>
         </div>
-      {{--   <div class="col-4">
+        <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                  Featured
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+              <div class="card-header">
+                Payment Terms <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter2"> Payment Terms </button>
               </div>
-        </div> --}}
+              <ul class="list-group list-group-flush">
+                  @foreach ($settings as $setting)
+                  <li class="list-group-item">{{$setting->extra1}}</li>
+                  @endforeach
+              </ul>
+            </div>
+        </div> 
     </div>
 </div>
 
