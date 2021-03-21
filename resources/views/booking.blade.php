@@ -149,7 +149,7 @@
                                         <td>{{$book->gaadi_rate}}</td>
                                         <td>{{$book->advance_2_tpt_details}}</td>
                                         <td>{{$book->advance_total_tpt}}</td>
-                                        <td>{{ substr($book->neft_txn_id,15)}}</td>
+                                   
                                        
                                         <td>{{$book->prize_money_tpt}}</td>
                                         <td>{{$book->driver_adv}}</td>
