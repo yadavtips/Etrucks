@@ -203,7 +203,9 @@
                             <label for="sel1">Vehicle Type (select one):</label>
                             <select class="form-control" id="sel1" name="vehicle_type">
                                 @foreach ($settings as $setting)
-                                <option>{{$setting->vehicle_type ?? ""}}</option>
+                                @if( $setting->vehicle_type != NULL )
+                                <option>{{$setting->vehicle_type }}</option>
+                                @endif
                                 @endforeach
                           
                             </select>
@@ -211,27 +213,30 @@
                         <div class="col">
                             <label for="sel1">Source of Lead (select one):</label>
                             <select class="form-control" id="sel1" name="lead_from">
-                                @foreach ($settings->slice(9,20) as $setting)
+                                @foreach ($settings as $setting)
+                                @if( $setting->lead_source != NULL )
                                 <option>{{$setting->lead_source}}</option>
+                                @endif
                                 @endforeach
-                              {{--   <option>+91 9717940842</option>
-                                <option>+91 7011893820</option>
-                                <option>+91 9350125636</option>
-                                <option>+91 9911695753</option>
-                                <option>+91 8800119298</option>
-                                <option>+91 9315436648</option>
-                                <option>+91 828743353</option>
-                                <option>Indiamart</option>
-                                <option>Facebook</option>
-                                <option>Linkedin</option>
-
-                                <option>Misc.</option> --}}
+                           
                               </select>
                         </div>
                      </div>
                   
                       <br>
 
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Payment Terms</label>
+                        <select class="form-control" id="sel1" name="extra1">
+                            @foreach ($settingsas $setting)
+                            @if( $setting->extra1 != NULL )
+                            <option>{{$setting->extra1}}</option>
+                            @endif
+                            @endforeach
+                    
+                          </select>
+                      </div>
+                      <br>
 
 
                      <div class="form-group">

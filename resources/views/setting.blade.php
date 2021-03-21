@@ -93,7 +93,9 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     @foreach ($settings->slice(9,20) as $setting)
+                    @if( $setting->lead_source != NULL )
                     <li class="list-group-item">{{$setting->lead_source}}</li>
+                    @endif
                     @endforeach
                 </ul>
               </div>
@@ -105,7 +107,9 @@
               </div>
               <ul class="list-group list-group-flush">
                   @foreach ($settings as $setting)
+                  @if( $setting->extra1 != NULL )
                   <li class="list-group-item">{{$setting->extra1}}</li>
+                  @endif
                   @endforeach
               </ul>
             </div>
