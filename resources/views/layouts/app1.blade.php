@@ -84,7 +84,7 @@
                         </div>
                     </li>
 
-                    <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li>
+              {{--       <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li> --}}
 
                 </ul>
             </nav>
