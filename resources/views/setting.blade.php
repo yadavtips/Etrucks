@@ -101,6 +101,7 @@
                 Payment Terms <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter2"> Payment Terms </button>
               </div>
               <ul class="list-group list-group-flush">
+                @php var_dump($settings); @endphp
                   @foreach ($settings as $setting)
                   <li class="list-group-item">{{$setting->extra1}}</li>
                   @endforeach
