@@ -152,8 +152,9 @@
                                         <td>{{$book->neft_txn_id}}</td>
                                         <td>{{$book->prize_money_tpt}}</td>
                                         <td>{{$book->driver_adv}}</td>
-                                        <td>{{$book->tds_party}}</td>
+                                     
                                         <td>{{$book->bal_tpt_paid}}</td>
+                                        <td>{{$book->tds_party}}</td>
                                         <td>{{$book->pod_doc_rec}}</td>
                                         <td>{{$book->party_name2}}</td>
                                         <td>{{$book->party_num}}</td>
