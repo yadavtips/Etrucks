@@ -77,20 +77,12 @@
                 </div>
         
                 <ul class="list-group list-group-flush">
-                  
-                    @php 
-            
-foreach($setting as $key => $val)
-if(empty($val))
-unset($setting[$key]);
-echo "After removing null values from the array, the array has the below elements -";
-foreach($setting as $key => $val)
-echo ($setting[$key] . "
-");
-                    @endphp
-                    
-               
-            
+                    @foreach ($setting as $type)
+                    @if( count($type->vehicle_type) )
+                    <li class="list-group-item">{{$type->vehicle_type}}</li>
+                @endif
+             
+                  @endforeach
                 </ul>
               </div>
         </div>
