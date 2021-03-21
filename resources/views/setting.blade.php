@@ -78,6 +78,11 @@
         
                 <ul class="list-group list-group-flush">
                     @foreach ($setting as $type)
+                    @php if($type->vehicle_type == NULL) 
+                    {
+                      
+                    }
+                    @endphp
                   <li class="list-group-item">{{$type->vehicle_type}}</li>
                   @endforeach
                 </ul>
@@ -101,7 +106,6 @@
                 Payment Terms <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter2"> Payment Terms </button>
               </div>
               <ul class="list-group list-group-flush">
-                @php var_dump($settings); @endphp
                   @foreach ($settings as $setting)
                   <li class="list-group-item">{{$setting->extra1}}</li>
                   @endforeach
