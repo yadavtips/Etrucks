@@ -99,6 +99,7 @@
 <td>PRIZE MONEY TPT</td> 
 <td>DRIVER ADV.</td> 
 <td>BAL.TPT & PAID ON BAL.</td> 
+<td>TDS PARTY</td>
 <td>POD DOC RECV.</td> 
 <td>PARTY NAME</td> 
 <td>PARTY NUMBER</td> 
@@ -111,6 +112,7 @@
 <td>PROFIT</td> 
 <td>POD SENT</td> 
 <td>GST BILL NO.</td> 
+<td>TDS BY ADMIN</td>
 <td>Verify Docs-Email/WhatsBAG/Copy</td> 
 <td>STATUS 1</td> 
 <td>STATUS 2</td> 
@@ -150,6 +152,7 @@
                                         <td>{{$book->neft_txn_id}}</td>
                                         <td>{{$book->prize_money_tpt}}</td>
                                         <td>{{$book->driver_adv}}</td>
+                                        <td>{{$book->tds_party}}</td>
                                         <td>{{$book->bal_tpt_paid}}</td>
                                         <td>{{$book->pod_doc_rec}}</td>
                                         <td>{{$book->party_name2}}</td>
@@ -163,6 +166,7 @@
                                         <td>{{$book->profit}}</td>
                                         <td>{{$book->pod_sent}}</td>
                                         <td>{{$book->gst_bill_num}}</td>
+                                        <td>{{$book->tds_admin}}</td>
                                         <td>{{$book->verify_docs}}</td>
                                         <td>{{$book->status1}}</td>
                                         <td>{{$book->status2}}</td>
@@ -323,7 +327,11 @@
                   <input type="text" class="form-control" name="driver_adv" placeholder="Driver Advance" id="inputZip">
                 </div>
               </div>
-         
+              <br>
+              <div class="form-group">
+                <label for="inputZip">TDS BY PARTY</label>
+                <input type="text" class="form-control" name="tds_party" placeholder="TDS BY PARTY" id="inputZip">
+              </div>
               <br>
               <div class="form-row">
                   <div class="form-group col-md-4">
@@ -396,6 +404,10 @@
                  
 
            <br>
+           <div class="form-group">
+            <label for="inputZip">TDS BY ADMIN</label>
+            <input type="text" class="form-control" name="tds_admin" placeholder="TDS BY ADMIN" id="inputZip">
+          </div>
                   <div class="form-row">
                       <div class="form-group col-md-4">
                         <label for="inputCity">GST BILL NO.</label>

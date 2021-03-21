@@ -47,6 +47,8 @@ class Booking extends Model
         'status1' ,
         'status2' ,
         'status3' ,
+        'tds_party' ,
+        'tds_admin' ,
         'call_status' 
     ];
   
