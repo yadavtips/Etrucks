@@ -228,7 +228,7 @@
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Payment Terms</label>
                         <select class="form-control" id="sel1" name="extra1">
-                            @foreach ($settingsas $setting)
+                            @foreach ($settings as $setting)
                             @if( $setting->extra1 != NULL )
                             <option>{{$setting->extra1}}</option>
                             @endif
