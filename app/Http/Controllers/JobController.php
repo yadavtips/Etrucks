@@ -21,12 +21,20 @@ class JobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $user = User::all();
-        ;
-       /*  $user = $job->user;  */
-        $jobs = Job::latest()->paginate(500);
-        return view('admin',compact( 'jobs','user'))
-           ->with('i', (request()->input('page', 1) - 1) * 500);
+    {  
+        if(Auth::user()->email == "abhikk3@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com"){
+            $user = User::all();
+            ;
+           /*  $user = $job->user;  */
+            $jobs = Job::latest()->paginate(500);
+            return view('admin',compact( 'jobs','user'))
+               ->with('i', (request()->input('page', 1) - 1) * 500);
+        }
+        
+        else{
+            echo "You are not allowed";
+        };
+       
            
     }
 
@@ -60,7 +68,7 @@ class JobController extends Controller
         ]);
 
      
-        Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
+      /*   Curl::to('https://api.twilio.com/2010-04-01/Accounts/AC4157963e85ead41ef3a0fd1498877e8b/Messages.json')
 
         ->withData(['To'=>'whatsapp:+918743000998', 'From'=>'whatsapp:+14155238886', 'Body'=>'New lead added by'. ' ' .$request['name'] . ' ' . 'on' .' '. Carbon::now()->format('h:i:s - d M y')])
         ->withHeader("authorization: Basic QUM0MTU3OTYzZTg1ZWFkNDFlZjNhMGZkMTQ5ODg3N2U4YjpmY2Y2YmE2NWI3Y2YwNzYzMjI0NzdkNzViNzhiNjZiZA==")
@@ -77,7 +85,7 @@ class JobController extends Controller
         ->withHeader("authorization: Basic Y2IyNzdlNTItMTlkMS00NGNjLWJiNWItMTg3NjkwYTdmNDc1",
         "content-type:application/json",)
 
-        ->post();
+        ->post(); */
         
         
         /* Curl::to('http://nimbusit.co.in/api/swsendSingle.asp')

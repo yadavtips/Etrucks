@@ -34,7 +34,6 @@ Route::get('/post-new-lead', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/admin', 'JobController@index')->name('job');
 Route::get('/lead-assigned-to-you', 'AssignedController@index')->name('assigned');
 
