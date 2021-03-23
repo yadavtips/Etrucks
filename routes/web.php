@@ -34,7 +34,12 @@ Route::get('/post-new-lead', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'JobController@index')->name('job');
+
+if(Auth::user()->email == "abhikk30@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com"){
+    Route::get('/admin', 'JobController@index')->name('job');
+};
+
+
 Route::get('/lead-assigned-to-you', 'AssignedController@index')->name('assigned');
 
 Route::get('/clear', function() {
