@@ -22,7 +22,7 @@ class JobController extends Controller
      */
     public function index()
     {  
-        if(Auth::user()->email == "abhikk3@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com"){
+        if(Auth::user()->email == "abhikk30@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com"){
             $user = User::all();
             ;
            /*  $user = $job->user;  */
