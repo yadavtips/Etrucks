@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $users = User::all();
 
-        return view('home',compact('user'));
+        return view('home',compact('users'));
 
     }
 }

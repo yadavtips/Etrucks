@@ -242,7 +242,7 @@
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Assign Job</label>
                         <select class="form-control" id="sel1" name="assigned_to">
-                            @foreach ($user as $u)
+                            @foreach ($users as $u)
                             <option>{{$u->name}} , {{$u->admin_phone}}</option>
                             @endforeach
                         
