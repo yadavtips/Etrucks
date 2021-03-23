@@ -239,6 +239,17 @@
                       <br>
 
 
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Assign Job</label>
+                        <select class="form-control" id="sel1" name="assigned_to">
+                            @foreach ($user as $u)
+                            <option>{{$u->name}} , {{$u->admin_phone}}</option>
+                            @endforeach
+                        
+                          </select>
+                      </div>
+                      <br>
+
                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Remarks</label>
                         <textarea class="form-control"name="remarks" id="exampleFormControlTextarea1" rows="3"></textarea>
