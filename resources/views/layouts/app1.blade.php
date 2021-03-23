@@ -83,7 +83,7 @@
                             </form>
                         </div>
                     </li>
-@if(Auth::user()->email == "abhikk30@hotmail.com")
+@if(Auth::user()->email == "abhikk30@hotmail.co")
           <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li> 
 
 @else
