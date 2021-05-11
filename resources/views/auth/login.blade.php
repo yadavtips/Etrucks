@@ -1,13 +1,42 @@
 @extends('layouts.app')
 
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+
+<style>
+
+body{
+    background-color: rgb(173, 120, 161) !important;
+}    
+
+.main__container{
+    margin-top: 2rem;
+}
+
+.card__background{
+    background-color: rgb(255, 213, 213);
+}
+
+.login__header{
+    text-align: center;
+    background-color: rgb(150, 49, 83) !important;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: 'Dela Gothic One', cursive;
+
+}
+
+</style>
+
 @section('content')
-<div class="container">
+<div class="container main__container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header login__header">{{ __('Login Etrucks CRM') }}</div>
 
-                <div class="card-body">
+                <div class="card-body card__background">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

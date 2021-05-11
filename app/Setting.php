@@ -13,7 +13,7 @@ class Setting extends Model
         'extra1',
         'extra2',
         'extra3',
-        'extra4', 
+        'extra4'
     ];
 
  

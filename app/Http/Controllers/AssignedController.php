@@ -107,7 +107,7 @@ class AssignedController extends Controller
           ))
           ->asJson()
            ->withHeader("authorization: Basic Y2IyNzdlNTItMTlkMS00NGNjLWJiNWItMTg3NjkwYTdmNDc1",
-           "content-type:application/json",)
+           "content-type:application/json")
     
            ->post();
 

@@ -49,7 +49,7 @@ class Booking extends Model
         'status3' ,
         'tds_party' ,
         'tds_admin' ,
-        'call_status' 
+        'call_status',
     ];
   
 }
