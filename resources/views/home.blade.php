@@ -117,12 +117,27 @@
   
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+<style>
+.card-header{
+    text-align: center;
+    background-color: rgb(180, 52, 127);
+}
+
+.card-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-left: 200px;
+    color: rgb(255, 255, 255);
+}
+</style>
 
 <div class="row">
     <div class="col-md-12 xs-6">
         <div class="card">
-            <div class="card-header" style="text-align: center;">
-                <h4 class="card-title" >Mark Your Attendance</h4>
+            <div class="card-header">
+                <h4 class="card-title" >Post New Lead</h4>
             </div>
          
 

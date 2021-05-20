@@ -2,7 +2,7 @@
 @extends('layouts.app_admin')
 
 @section('form')
-
+@section('title', 'Bookings')
 
 <head>
 	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>

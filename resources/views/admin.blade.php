@@ -1,6 +1,6 @@
  
 @extends('layouts.app_admin')
-
+@section('title', 'Leads')
 <head>
 	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
@@ -61,21 +61,17 @@
 								<thead class="thead-dark">
 									
 									<tr>
+										<th>Load Type</th>
+										<th>Load From</th>
+										<th>Dispatch To</th>
+										<th>Party Number</th>
 										<th>Vehicle Type</th>
-										<th>From</th>
-										<th>To</th>
-										<th>Party Num</th>
-										<th>Vehicle Type</th>
-                                         <th>Created at</th>
-                                       
+                                        <th>Created At</th>
 										<th>Assigned To</th>
+										<th>Remarks</th>
 										<th>Status</th>
-										<th>Whatsapp</th>
-										
+										<th>Send WhatsApp</th>
 										<th>Lead Status</th>
-									
-										
-
 									</tr>
 								</thead>
 
@@ -83,15 +79,15 @@
 									@foreach ($jobs as $c)
 									
 									<tr>
-										<td style="font-size: 12px;">{{ $c->load_type }} {{ $c->id }}</td>
+										<td style="font-size: 10px;">{{ $c->load_type }} {{ $c->id }}</td>
 										
 										
-										<td style="font-size: 12px;">{{ $c->load_from }}</td>
+										<td style="font-size: 10px;">{{ $c->load_from }}</td>
 
-                                        <td style="font-size: 12px;">{{ $c->dispatch_to }}</td>
-										<td style="font-size: 12px;">{{ $c->phone }} </td>
+                                        <td style="font-size: 10px;">{{ $c->dispatch_to }}</td>
+										<td style="font-size: 10px;">{{ $c->phone }} </td>
 										<td style="font-size: 12px;">{{$c->vehicle_type}}</td>
-										<td style="font-size: 12px;">
+										<td style="font-size: 10px;">
 											{{ $c->created_at }}
 										</td >
 										
@@ -104,6 +100,9 @@
 																					{{$c->updated_at}}</p> 
 
 																							@endif</td>
+                                        <td style="font-size: 12px;">{{$c->remarks}}</td>
+
+
                                         <td style="font-size: 12px;"><!-- Button trigger modal -->
 											<button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $c->created_at }}">
 												View
@@ -214,7 +213,7 @@
 												</div>
 											  </div></td>
 											  
-										<td style="text-align: center;font-size:12px;">@if($c->assigned_to =='')   
+										<td style="text-align: center;font-size:20px;">@if($c->assigned_to =='')   
 											Assign First
 												@else
 
@@ -268,7 +267,7 @@
 												  </div>
 											@endif
 										</td>
-									<td style="font-size: 12px;">
+									<td style="font-size: 13px;">
 										@if ($c->lead_status == '')
 										<a style="color:red;text-align:center;">No Status</a>
 										@elseif($c->lead_status == "Completed")

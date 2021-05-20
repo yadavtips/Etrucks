@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<title>Etrucks CRM</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@700&display=swap" rel="stylesheet">
 

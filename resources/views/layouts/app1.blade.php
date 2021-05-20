@@ -8,7 +8,9 @@
  <!-- CSRF Token -->
  <meta name="csrf-token" content="{{ csrf_token() }}">
 
- <title>{{ config('app.name', 'Etrucks') }}</title>
+ {{-- <title>{{ config('app.name', 'Etrucks') }}</title> --}}
+ <title>Etrucks CRM</title>
+
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
@@ -39,6 +41,12 @@
 </head>
 
 <body>
+
+    <style>
+        #header{
+            background-color: rgb(27, 14, 23);
+        }
+    </style>
 
     <!-- ======= Mobile nav toggle button ======= -->
     <div class="container">
@@ -83,7 +91,7 @@
                             </form>
                         </div>
                     </li>
-@if(Auth::user()->email == "abhikk30@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com")
+@if(Auth::user()->email == "abhikk30@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com" || Auth::user()->email == "nitinanand58@gmail.com" )
           <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li> 
 
 @else

@@ -113,9 +113,9 @@
     <p class="card-text">
        
        Phone: &nbsp;&nbsp; {{ $c->phone }} <br>
-                                                Load From: &nbsp;&nbsp; {{ $c->load_from }}<br>
-                                                Dispatch To: &nbsp;&nbsp; {{ $c->dispatch_to }}<br>
-                                                Vehicle Type: &nbsp;&nbsp; {{$c->vehicle_type}}<br>
+       Load From: &nbsp;&nbsp; {{ $c->load_from }}<br>
+       Dispatch To: &nbsp;&nbsp; {{ $c->dispatch_to }}<br>
+       Vehicle Type: &nbsp;&nbsp; {{$c->vehicle_type}}<br>
                                              
     </p>
     

@@ -119,6 +119,7 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
+      <th scope="col">Account Type</th>
       <th scope="col">Email</th>
       <th scope="col">Delete User</th>
       <th scope="col">Change Password</th>
