@@ -53,7 +53,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        Booking::create($request->all()->except('id'));
+        Booking::create($request->except('id'));
         return redirect()->back()->with('success', 'Booking Created');   
      
        

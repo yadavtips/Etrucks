@@ -129,6 +129,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     margin-left: 200px;
+    margin-top: 10px;
     color: rgb(255, 255, 255);
 }
 </style>
@@ -143,6 +144,13 @@
 
 
   <!-- ======= About Section ======= -->
+<style>
+    .about{
+        background-color: rgb(255, 238, 238);
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
+
   <section id="about" class="about">
     <div class="container">
 
@@ -184,6 +192,8 @@
                 <form action="{{ route('job.store') }}" method="POST" >
                     @csrf
                     
+
+
                     <div class="form-group">
                         <label for="sel1">Type:</label> &nbsp;&nbsp;
 

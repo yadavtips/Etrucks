@@ -92,10 +92,11 @@
                         </div>
                     </li>
 @if(Auth::user()->email == "abhikk30@hotmail.com" || Auth::user()->email == "yadavtips@gmail.com" || Auth::user()->email == "yadavtips1@gmail.com" || Auth::user()->email == "etruckload@gmail.com" || Auth::user()->email == "nitinanand58@gmail.com" )
-          <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li> 
-
+         
+               {{-- <script>window.location.href = "{{url('/admin')}}";</script>  --}}
+           <li><a href="/admin"><i class="bx bx-admin"></i> <span>Login as Admin</span></a></li> 
 @else
-    
+    <h1>Sorry You Don't Have Admin Privileges</h1>
 @endif
                 </ul>
             </nav>
