@@ -37,8 +37,20 @@
 
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 @section('form')
+
+<style>
+.modal-inner{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+</style>
+
+
+
 <!-- Large modal -->
 
 
@@ -58,24 +70,21 @@
 					<div class="card-header">
 						<h4 class="card-title">Bookings
 					
-								&nbsp &nbsp <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">  Add New Booking</button>
-              
-								
-						
-						</h4> 
+								&nbsp &nbsp <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">  Add New Booking</button>						
+						</h4>
 							
+
 						
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="basic-datatables" class="display table table-striped table-hover table-sm">
-								<thead class="thead-dark">
+							<table id="basic-datatables" class="display table table-striped table-sm">
+								<thead class="table-dark">
 									
-									<tr>
+									<tr class="text-white">
 
-	<td>ID</td> 		
-  <td>EDIT</td>				
-  <td>DELETE</td>			
+<td>ID</td> 		
+<td>View</td>
 <td>BOOKING ID</td> 
 <td>ATTACH BY</td> 
 <td>LOAD DATE</td> 
@@ -145,9 +154,105 @@
 									
                                         @foreach ($booking as $book)
                                         <tr>
-                                        <td>{{$book->id}}</td>
-                                        <td> <a href="{{ route('booking.edit', $book->id) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                                        <td style="color: red;"><i class="fa fa-times" aria-hidden="true"></i></td>
+                                          <td>{{$book->id}}</td>
+
+                                          <td style="font-size: 12px;"><!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $book->id }}">
+                                              View
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="{{ $book->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content modal-inner">
+                                                <div class="modal-header bg-danger-gradient">
+                                                  <h5 class="modal-title text-white" id="{{ $book->id }}Title">View Booking</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body bg-info-gradient text-white font-weight-bolder">
+                                                  Booking ID: &nbsp;&nbsp; {{ $book->booking }} <br>
+                                                  Attach By: &nbsp;&nbsp; {{ $book->attach }}<br>
+                                                  Load Date: &nbsp;&nbsp; {{ $book->load_date }}<br>
+                                                  Load Point: &nbsp;&nbsp; {{$book->load_point}}<br>
+                                                  Unload Point: &nbsp;&nbsp; {{$book->upload_point}}<br>
+                                                  Truck No.: &nbsp;&nbsp; {{$book->truck_num}}<br>
+                                                  Truck Type:&nbsp;&nbsp;{{$book->truck_type}}<br>
+                                                  Driver No.:&nbsp;&nbsp;{{$book->driver_num}}<br>
+                                                  Owner Name:&nbsp;&nbsp;{{$book->owner_name}}<br>
+                                                  Owner No.:&nbsp;&nbsp;{{$book->owner_num}}<br>
+                                                  TPT Name:&nbsp;&nbsp;{{$book->tpt_name}}<br>
+                                                  TPT Mobile:&nbsp;&nbsp;{{$book->tpt_mob}}<br>
+                                                  Mobile 2:&nbsp;&nbsp;{{$book->mobile2}}<br>
+                                                  TPT Acc Name:&nbsp;&nbsp;{{$book->tpt_account_name}}<br>
+                                                  TPT Acc No.:&nbsp;&nbsp;{{$book->tpt_account_num}}<br>
+                                                  IFSC Code:&nbsp;&nbsp;{{$book->tpt_ifsc_code}}<br>
+                                                  Gaadi Rate:&nbsp;&nbsp;{{$book->gaadi_rate}}<br>
+                                                  ADV. 2 TPT Details:&nbsp;&nbsp;{{$book->advance_2_tpt_details}}<br>
+                                                  ADV. Total TPT:&nbsp;&nbsp;{{$book->advance_total_tpt}}<br>
+                                                  NEFT/IMPS/TXN ID:&nbsp;&nbsp;{{$book->neft_txn_id}}<br>
+                                                  Prize Money TPT:&nbsp;&nbsp;{{$book->prize_money_tpt}}<br>
+                                                  Driver ADV:&nbsp;&nbsp;{{$book->driver_adv}}<br>
+                                                  TDS Yadav Brothers:&nbsp;&nbsp;{{$book->tds_yadavbrother}}<br>
+                                                  TPT Halting:&nbsp;&nbsp;{{$book->tpt_halting}}<br>
+                                                  TPT Overload:&nbsp;&nbsp;{{$book->tpt_overload}}<br>
+                                                  TDS Verify Doc:&nbsp;&nbsp;{{$book->tpt_verifydoc}}<br>
+                                                  Bal. TPT & Paid On Bal.:&nbsp;&nbsp;{{$book->bal_tpt_paid}}<br>
+                                                  POD Doc Received:&nbsp;&nbsp;{{$book->pod_doc_rec}}<br>
+                                                  Party Name:&nbsp;&nbsp;{{$book->party_name2}}<br>
+                                                  Party Number:&nbsp;&nbsp;{{$book->party_num}}<br>
+                                                  Party Number 2:&nbsp;&nbsp;{{$book->party_num2}}<br>
+                                                  Party Rate:&nbsp;&nbsp;{{$book->party_rate}}<br>
+                                                  Adv. By Party:&nbsp;&nbsp;{{$book->adv_by_party}}<br>
+                                                  Adv. Total Party:&nbsp;&nbsp;{{$book->adv_total_party}}<br>
+                                                  NEFT/IMPS TXT Details:&nbsp;&nbsp;{{$book->imps_txn_details}}<br>
+                                                  Prize Money Party:&nbsp;&nbsp;{{$book->prize_money_party}}<br>
+                                                  Bal. On Party & Received:&nbsp;&nbsp;{{$book->bal_on_party}}<br>
+                                                  Profit:&nbsp;&nbsp;{{$book->profit}}<br>
+                                                  POD Sent:&nbsp;&nbsp;{{$book->pod_sent}}<br>
+                                                  GST Bill No.:&nbsp;&nbsp;{{$book->gst_bill_num}}<br>
+                                                  TDS By Party:&nbsp;&nbsp;{{$book->tds_party}}<br>
+                                                  Party Adv Date:&nbsp;&nbsp;{{$book->party_advdate}}<br>
+                                                  Bilti No.:&nbsp;&nbsp;{{$book->bilti_num}}<br>
+                                                  Party Bill Amount:&nbsp;&nbsp;{{$book->partybill_amt}}<br>
+                                                  Party Bill Date:&nbsp;&nbsp;{{$book->partybill_date}}<br>
+                                                  Party NEFT/IMPS TXN Details:&nbsp;&nbsp;{{$book->party_nefttxn}}<br>
+                                                  TPT Halting Party:&nbsp;&nbsp;{{$book->tpt_haltingparty}}<br>
+                                                  TPT Overload Party:&nbsp;&nbsp;{{$book->tpt_overloadparty}}<br>
+                                                  Loading Person:&nbsp;&nbsp;{{$book->loading_person}}<br>
+                                                  Verify Docs-Email/WhatsApp/Copy:&nbsp;&nbsp;{{$book->verify_docparty}}<br>
+                                                  Status 1:&nbsp;&nbsp;{{$book->status1}}<br>
+                                                  Status 2:&nbsp;&nbsp;{{$book->status2}}<br>
+                                                  Status 3:&nbsp;&nbsp;{{$book->status3}}<br>
+                                                  Status 4:&nbsp;&nbsp;{{$book->status4}}<br>
+                                                  Status 5:&nbsp;&nbsp;{{$book->status5}}<br>
+                                                  Status 6:&nbsp;&nbsp;{{$book->status6}}<br>
+                                                  Status 7:&nbsp;&nbsp;{{$book->status7}}<br>
+                                                  Status 8:&nbsp;&nbsp;{{$book->status8}}<br>
+                                                  Status 9:&nbsp;&nbsp;{{$book->status9}}<br>
+                                                  Status 10:&nbsp;&nbsp;{{$book->status10}}<br> 
+                                                </div>
+
+                                                <div class="modal-footer">
+
+                                                  <a href="{{ url('booking/'.$book->id)}}" class="btn btn-danger btn-sm">Delete</a>
+
+
+
+                                                  <a href="{{ route('booking.edit', $book->id) }}" class="btn btn-info btn-sm">Edit</a>
+
+
+                                                  <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                                 
+                                                </div>
+                                                </div>
+                                              </div>
+                                              </div></td>
+
+                                          
+                                       
+                                        
                                         <td>{{$book->booking}}</td>
                                         <td>{{$book->attach}}</td>
                                         <td>{{$book->load_date}}</td>
@@ -257,7 +362,7 @@
           <input type="text"  name="load_point"  placeholder="Load Point" class="form-control" id="inputCity">
         </div>
       </div>
- 
+
       <div class="form-row">   
         <div class="form-group col-md-3">
           <label for="inputZip">Unload Point</label>
@@ -277,7 +382,7 @@
         </div>
       </div>
  
-      <br>
+      
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="inputCity">Owner Name</label>
@@ -318,7 +423,7 @@
               </div>
 
 
-            <br>
+           
             <div class="form-row">
                 <div class="form-group col-md-3">
                   <label for="inputCity">Gaadi Rate</label>
@@ -341,7 +446,7 @@
          
 
 
-            <br>
+           
             <div class="form-row">
                 
                 <div class="form-group col-md-3">
@@ -801,5 +906,6 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 </div> --}}
+
 
 @endsection
