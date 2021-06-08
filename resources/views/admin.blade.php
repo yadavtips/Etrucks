@@ -18,7 +18,7 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
   
@@ -29,13 +29,98 @@
   
 <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
 
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 </head>
 @section('form')
+
+
+<style>
+	.sorting_asc{
+		width: 30px !important;
+	}
+
+	.table td, .table th {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    border-top-width: 0;
+    border-bottom: 1px solid;
+    border-color: #ebedf2!important;
+    padding: 0 10px!important;
+    height: 45px !important;
+    vertical-align: middle!important;
+    max-width: 150px !important;
+}
+
+
+	.card .card-header, .card-light .card-header {
+    padding: 0rem 1.25rem !important;
+    background-color: rgb(255, 232, 232) !important;
+    border-bottom: 1px solid #ff0000!important;
+}
+
+.card .card-body, .card-light .card-body {
+    padding: 0px !important;
+}
+
+.card-title{
+  margin: 4px !important;
+}
+
+@media (min-width: 992px){
+.page-inner
+ {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+}
+
+.page-inner {
+    padding: 0 0 !important;
+}
+
+button.dt-button, div.dt-button, a.dt-button, input.dt-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+   margin: 5px;
+   padding: 1px 7px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid rgb(238, 195, 247);
+    border-radius: 3px;
+    padding: 0px;
+    margin: 6px;
+    background-color: transparent;
+    margin-left: 3px;
+}
+
+.lead-btn{
+	
+	padding: 2px 10px;
+	border-radius: 4px;
+	background-color: #fd1e00;
+	font-family: 'Poppins', sans-serif !important;
+	font-size: 15px;
+}
+
+.lead-btn:hover{
+	background-color: rgb(0, 0, 0);
+	
+}
+</style>
 
 <div class="content">
 	<div class="page-inner">
@@ -44,9 +129,9 @@
 		<div class="row">
 			<div class="col-md-12 xs-6">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header text-center">
 						<h4 class="card-title">Recentely Added Leads &nbsp &nbsp
-							<a href="/home"  style="color:red;"class="collapsed" aria-expanded="false">
+							<a href="/home" class="collapsed lead-btn text-white" aria-expanded="false">
 							
 								Post New Lead
 								
@@ -57,7 +142,7 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="basic-datatables" class="display table table-striped table-hover table-sm">
+							<table id="basic-datatables" class="display table table-striped table-hover table-sm" >
 								<thead class="thead-dark">
 									
 									<tr>
@@ -295,12 +380,14 @@
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
-			"order": [[ 5, "desc" ]],
-  dom: 'Bfrtip',
-  buttons: [
-    'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
+			// "order": [[ 5, "desc" ]],
+             dom: 'Bfrtip',
+            buttons: [
+             'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5', 'print'
   ]
 } );
+
 		</script>
+
 
 @endsection

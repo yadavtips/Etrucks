@@ -38,6 +38,10 @@
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
 
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 @section('form')
@@ -46,6 +50,76 @@
 .modal-inner{
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
+}
+
+
+
+.sorting{
+  padding: 0px 3px !important;
+  height: 4px !important;
+  width: 0px !important;
+
+}
+
+
+.table td, .table th {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 10px !important;
+    border-top-width: 0;
+    border-bottom: 1px solid;
+    border-color: #ebedf2!important;
+    padding: 0 10px!important;
+    height: 37px !important;
+    vertical-align: middle!important;
+    max-width: 150px !important;
+}
+
+.btn-sm {
+    font-size: 10px !important;
+    padding: 5px 7px !important;
+}
+
+.card .card-header, .card-light .card-header {
+    padding: 0rem 1.25rem !important;
+    background-color: rgb(255, 232, 232) !important;
+    border-bottom: 1px solid #ff0000!important;
+}
+
+.card .card-body, .card-light .card-body {
+    padding: 0px !important;
+}
+
+.card-title{
+  margin: 4px !important;
+}
+
+@media (min-width: 992px){
+.page-inner
+ {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+}
+
+.page-inner {
+    padding: 0 0 !important;
+}
+
+button.dt-button, div.dt-button, a.dt-button, input.dt-button {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+   margin: 5px;
+   padding: 1px 7px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid rgb(238, 195, 247);
+    border-radius: 3px;
+    padding: 0px;
+    margin: 6px;
+    background-color: transparent;
+    margin-left: 3px;
 }
 </style>
 
@@ -68,9 +142,9 @@
 			<div class="col-md-12 xs-6">
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title">Bookings
+						<h4 class="card-title text-center">Bookings
 					
-								&nbsp &nbsp <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">  Add New Booking</button>						
+								&nbsp &nbsp <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">Add New Booking</button>						
 						</h4>
 							
 
@@ -78,8 +152,8 @@
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="basic-datatables" class="display table table-striped table-sm">
-								<thead class="table-dark">
+							<table id="basic-datatables" class="display table table-striped table-sm full-table">
+								<thead class="table-dark table-head">
 									
 									<tr class="text-white">
 
@@ -153,8 +227,8 @@
 								<tbody>
 									
                                         @foreach ($booking as $book)
-                                        <tr>
-                                          <td>{{$book->id}}</td>
+                                        <tr class="table-row">
+                                          <td class="table-body">{{$book->id}}</td>
 
                                           <td style="font-size: 12px;"><!-- Button trigger modal -->
                                             <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#{{ $book->id }}">

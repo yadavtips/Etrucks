@@ -86,4 +86,25 @@ class LeadController extends Controller
     {
         //
     }
+
+    public function webLeads(Request $request)
+    { 
+        $lead = [
+            [  'name' => 'etrucks',
+               'load_type' => $request->load,
+               'phone' => $request->phone,
+               'load_from' => $request->loadFrom,
+               'dispatch_to' => $request->dispatchTo,
+               'vehicle_type' => $request->vehicleType,
+               //'payment_terms' => $request->paymentTerms,
+               'remarks' => $request->remarks,
+               'lead_from' => 'Website',
+               'created_at' => date("Y-m-d h:i:s"),
+               'updated_at' => date("Y-m-d h:i:s")
+            ]
+
+        ];
+        Job::insert($lead);
+    
+    }
 }
