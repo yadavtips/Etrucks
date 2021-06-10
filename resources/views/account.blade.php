@@ -1,5 +1,6 @@
 @extends('layouts.app_admin')
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 @section('form')
 {{-- @if (auth()->user()->email == "yadavtips@gmail.com" || auth()->user()->email == "abhikk100@gmail.com"  )
  --}}    
@@ -10,29 +11,46 @@
       {{ session()->get('message') }}
   </div>
 @endif
+
+<style>
+
+  body{
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .account-navbar{
+    line-height: 0.5rem !important;
+  }
+
+  .form-check, .form-group {
+    margin-bottom: 0;
+    padding: 5px !important;
+}
+</style>
+
 <div class="container">
-<nav>
+<nav class="text-center account-navbar">
   <br>
   <br>
 
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-Success" data-toggle="modal" data-target="#exampleModalCenter">
   Register New User
 </button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Register New User</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal-content text-white">
+      <div class="modal-header bg-dark-gradient ">
+        <h5 class="modal-title " id="exampleModalCenterTitle">Register New User</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-    
-          <form method="POST" action="{{ route('register') }}">
+      <div class="modal-body bg-warning-gradient">
+     
+          <form method="POST" class="text-white" action="{{ route('register') }}">
               @csrf
 
               <div class="form-group row">
@@ -114,15 +132,20 @@
     </div>
   </div>
 </div>
-
 </nav>
+<div class="row">
+  <div class="col-md">
   <thead>
     <tr>
       <th scope="col">Name</th>
       {{-- <th scope="col">Account Type</th> --}}
       <th scope="col">Email</th>
-      <th scope="col">Delete User</th>
-      <th scope="col">Change Password</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Company Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Truck Type</th>
+      <th scope="col">Manage User</th>
+      {{-- <th scope="col">Update Password</th> --}}
     </tr>
   </thead>
   <tbody>
@@ -130,11 +153,52 @@
     <tr>
       <th scope="row">{{$user->name}}</th>
       <td>{{$user->email}}</td>
+      <td>{{$user->admin_phone}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td>
-          <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$user->id}}">
-Delete User
-</button>
+            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#{{ $user->id }}">
+              Manage User
+              </button>
+
+        <div class="modal fade" id="{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-inner">
+            <div class="modal-header bg-danger-gradient">
+              <h5 class="modal-title text-white" id="{{ $user->id }}Title">Manage User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body bg-info-gradient text-white font-weight-bolder">
+
+              Name: &nbsp;&nbsp; {{$user->name}} <br><br>
+              Email: &nbsp;&nbsp; {{ $user->email }}<br><br>
+
+              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal{{$user->id}}">
+                Delete User
+                </button>
+                <br><br>
+
+                <form action="{{ route('account.update',$user->id) }}" method="POST" >
+                  @method('PUT')
+                  @csrf
+                  <input name="new_password" class="form-group" minlength="8">
+              <button type="submit" class="btn btn-dark btn-sm">Update Password</button></td>
+              </form>
+            
+            </div>
+
+            {{-- <div class="modal-footer">
+              
+              <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+             
+            </div> --}}
+            </div>
+          </div>
+          </div></td>
+      <td>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -154,13 +218,13 @@ Delete User
   </div>
 </div>
          
-      <td> <form action="{{ route('account.update',$user->id) }}" method="POST" >
+      {{-- <td> <form action="{{ route('account.update',$user->id) }}" method="POST" >
           @method('PUT')
           @csrf
           <input name="new_password" class="form-group" minlength="8">
-      <button type="submit" class="btn btn-danger">Update Password</button></td>
+      <button type="submit" class="btn btn-warning btn-sm">Update Password</button></td>
       </form>
-  </td>
+  </td> --}}
     </tr>
  @endforeach
   </tbody>
@@ -170,5 +234,7 @@ Delete User
 @else
  <a style="color:red;">   Only Admin Can Access This Page </a>
 @endif
+</div>
+</div>
 
 @endsection

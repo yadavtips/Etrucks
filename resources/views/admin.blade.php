@@ -380,10 +380,10 @@ button.dt-button, div.dt-button, a.dt-button, input.dt-button {
 		</div>
 	<script>
 		$('#basic-datatables').DataTable({
-			// "order": [[ 5, "desc" ]],
+			"order": [[ 5, "desc" ]],
              dom: 'Bfrtip',
             buttons: [
-             'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5', 'print'
+             'pageLength', 'excelHtml5', 'pdfHtml5', 'csvHtml5'
   ]
 } );
 
